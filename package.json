@@ -20,12 +20,18 @@
   "directories": {
     "test": "test"
   },
+  "engines": {
+    "node": "6.10.1",
+    "npm": "3.10.10"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.2"
+  }
 }
-    
