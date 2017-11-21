@@ -20,12 +20,18 @@ export const logoutCurrentUser = () => ({
 
 export const login = (user) => dispatch => (
   APIUtil.login(user)
-    .then(currentUser => dispatch(receiveCurrentUser(currentUser)))
+    .then(
+      currentUser => dispatch(receiveCurrentUser(currentUser)),
+      error => dispatch(receiveSessionErrors(error.responseJSON))
+    )
 );
 
 export const signup = (user) => dispatch => (
   APIUtil.signup(user)
-    .then(currentUser => dispatch(receiveCurrentUser(currentUser)))
+    .then(
+      currentUser => dispatch(receiveCurrentUser(currentUser)),
+      error => dispatch(receiveSessionErrors(error.responseJSON))
+    )
 );
 
 export const logout = () => dispatch => (
