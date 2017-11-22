@@ -11,24 +11,22 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 10px;
-}
-
-.GC {
-  
+  margin: 10px;
 }
 
 .appname {
   padding: 20px;
+  margin-left: 100px;
   font-family: $pacifico;
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 500;
 }
 
 .navbar-button {
   position: absolute;
-  top: 20px;
+  top: 35px;
   right: 10px;
+  font-size: 20px;
   display: flex;
   justify-content: space-around;
   width: 15%;

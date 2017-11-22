@@ -36,14 +36,14 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'login') {
       return (
         <Link to="/signup">
-          <button className="session-button">Sign Up</button>
+          <button className="session-button">SIGN UP</button>
         </Link>
       );
     }
     else {
       return (
         <Link to="/login">
-          <button className="session-button">Sign In</button>
+          <button className="session-button">SIGN IN</button>
         </Link>
       );
     }
@@ -64,44 +64,44 @@ class SessionForm extends React.Component {
 
     const title = (this.props.formType === 'login') ? 'Sign In' : 'Sign Up';
     const otherTitle = (this.props.formType === 'login') ? 'New User' : 'Already a User?';
+    const capitalTitle = (title === 'Sign In') ? 'SIGN IN' : 'SIGN UP';
 
     return (
       <div className="session-section">
         <div className="main-session-form">
-            <span className="session-title">{title}</span>
+            <div className="session-title">{title}</div>
 
-            <form onSubmit={this.handleSubmit}>
+
+            <form onSubmit={this.handleSubmit} className="session-form">
             {this.renderErrors()}
 
-              <div className="session-form">
-                <label>Username:
-                  <input
-                    type="text"
-                    value={this.state.username}
-                    onChange={this.handleInput('username')}
-                    required="true" />
-                </label>
-                <br/>
+              <span>Username:</span>
+              <input
+                type="text"
+                value={this.state.username}
+                onChange={this.handleInput('username')}
+                required="true"
+                className="session-input" />
 
-                <label>Password:
-                  <input
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.handleInput('password')}
-                    required="true"/>
-                </label>
-                <br/>
+              <span>Password:</span>
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.handleInput('password')}
+                required="true"
+                className="session-input"/>
 
-                <input
-                  type="submit"
-                  value={title}
-                  className="session-button" />
-              </div>
+              <input
+                type="submit"
+                value={capitalTitle}
+                className="session-button" />
 
+              <button className="session-button">DEMO</button>
             </form>
+
         </div>
         <div className="other-session-form">
-          <span className="session-title">{otherTitle}</span>
+          <span className="session--other-title">{otherTitle}</span>
           <br/>
           <span>{this.navLink()}</span>
         </div>

@@ -1,3 +1,62 @@
 // Place all the styles related to the Api::Sessions controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com
+
+@import '../base/color';
+
+.session-section {
+  border: 1px solid black;
+  border-radius: 5%;
+  height: 640px;
+  width: 320px;
+  margin: 150px;
+  padding: 20px;
+  font-size: 28px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 4,1;
+}
+
+.main-session-form {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  border-bottom: 1px dashed $darkest-blue;
+  flex-grow: 4;
+}
+
+.session-title {
+  display: block;
+  padding: 20px;
+}
+
+.session-form {
+  border-top: 1px dashed $darkest-blue;
+  padding: 20px;
+  flex-grow: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.session-input {
+  width: 90%;
+  height: 30px;
+  font-size: 20px;
+}
+
+
+.other-session-form {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.session-button {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  color: $darkest-blue;
+  background: $dawn-pink;
+}

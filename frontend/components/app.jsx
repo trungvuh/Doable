@@ -15,7 +15,7 @@ const App = () => (
     <header className="header-nav">
       <div className="nav-bar">
         <span className="appname">Doable</span>
-        <GreetingContainer className="GC" />
+        <GreetingContainer />
       </div>
     </header>
 

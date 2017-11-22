@@ -19,7 +19,10 @@
 //Base
 @import 'base/font';
 @import 'base/color';
+
+//Navbar
 @import 'navbar/navbar';
+@import 'api/sessions';
 
 body {
   font-family: $helvetica;
