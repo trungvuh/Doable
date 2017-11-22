@@ -13,6 +13,10 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillMount() {
+    document.title = "Doable - Login";
+  }
+
   //look over this one when have time
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
