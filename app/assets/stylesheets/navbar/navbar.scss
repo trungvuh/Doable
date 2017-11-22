@@ -21,7 +21,22 @@
   margin-left: 100px;
   font-family: $pacifico;
   font-size: 40px;
-  font-weight: 500;
+  font-weight: 550;
+  text-decoration: none;
+  color: inherit;
+}
+
+.appname:visited {
+  color: inherit;
+}
+
+.app-punch-line {
+  color: inherit;
+  font-family: inherit;
+  font-size: 13px;
+  position: absolute;
+  top: 63px;
+  left: 93px;
 }
 
 .navbar-button {
@@ -36,10 +51,15 @@
 .btn {
   text-decoration: none;
   cursor: pointer;
+  color: inherit;
 }
 
 .btn:hover {
   text-decoration: underline;
+}
+
+.btn:visited {
+  color: inherit;
 }
 
 .logout-btn {
@@ -53,12 +73,4 @@
 .welcome {
   display: block;
   margin: 5px;
-}
-
-.logo {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  height: 80px;
-  width: 60px;
 }

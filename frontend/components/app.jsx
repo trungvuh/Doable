@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { AuthRoute } from '../utils/route_util';
 
-import GreetingContainer from './navbar/greeting_container';
+import Logo from './logo';
 import SessionFormContainer from './session_form/session_form_container';
+import BackgroundImg from './background_img';
 // import SearchContainer from './bench_index/search_container';
 
 
@@ -13,14 +14,10 @@ import SessionFormContainer from './session_form/session_form_container';
 const App = () => (
   <div>
     <header className="header-nav">
-      <div className="nav-bar">
-        <div className="appname">Doable</div>
-        <GreetingContainer  />
-      </div>
+      <Logo />
     </header>
 
-    <img src="http://res.cloudinary.com/trungvuh/image/upload/c_fill,h_700,w_1300/v1511340654/24_izm9b5.jpg"
-      className="background-pic"/>
+    <Route exact path='/' component={BackgroundImg}/>
 
     <AuthRoute path='/login' component={SessionFormContainer}/>
     <AuthRoute path='/signup' component={SessionFormContainer}/>
