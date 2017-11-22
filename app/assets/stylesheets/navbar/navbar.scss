@@ -4,6 +4,7 @@
 .header-nav {
   width: 100%;
   height: 80px;
+
 }
 
 .nav-bar {
@@ -11,11 +12,13 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin: 10px;
+  // margin: 10px;
+  background: $iron;
+  border-bottom: 1px solid $lightest-gray;
 }
 
 .appname {
-  padding: 20px;
+  margin: 20px;
   margin-left: 100px;
   font-family: $pacifico;
   font-size: 40px;
@@ -23,22 +26,38 @@
 }
 
 .navbar-button {
-  position: absolute;
-  top: 35px;
-  right: 10px;
+  // position: absolute;
+  // top: 35px;
+  // right: 10px;
+  margin: 20px;
   font-size: 20px;
   display: flex;
   justify-content: space-around;
-  width: 15%;
+  align-items: center;
+  width: 20%;
   // padding: 40px;
 }
 
 .btn {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .btn:hover {
   text-decoration: underline;
+}
+
+.logout-btn {
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-left: 15px;
+}
+
+.welcome {
+  display: block;
+  margin: 5px;
 }
 
 .logo {
