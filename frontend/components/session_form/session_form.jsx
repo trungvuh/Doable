@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentWillMount() {
@@ -28,6 +29,12 @@ class SessionForm extends React.Component {
     return (event) => {
       this.setState({ [type]: event.target.value });
     };
+  }
+
+  demoLogin(event) {
+    event.preventDefault();
+    const demoUser = {username:"demo", password:"password"};
+    this.props.login(demoUser);
   }
 
   handleSubmit(event) {
@@ -99,7 +106,11 @@ class SessionForm extends React.Component {
                 value={capitalTitle}
                 className="session-button" />
 
-              <button className="session-button">DEMO</button>
+              <button
+                className="session-button"
+                onClick={this.demoLogin}>
+                DEMO
+              </button>
             </form>
 
           </div>
