@@ -26,6 +26,7 @@ const App = () => (
     <div className="session-page">
       <AuthRoute path='/login' component={SessionFormContainer}/>
       <AuthRoute path='/login' component={SessionWelcome}/>
+
       <AuthRoute path='/signup' component={SessionFormContainer}/>
       <AuthRoute path='/signup' component={SessionWelcome}/>
     </div>
@@ -36,6 +37,7 @@ const App = () => (
 
   </div>
 );
+
 // <Route exact path='/' component={SearchContainer}/>
 
 export default App;

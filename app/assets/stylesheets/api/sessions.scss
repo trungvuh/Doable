@@ -3,31 +3,55 @@
 // You can use Sass (SCSS) here: http://sass-lang.com
 
 @import '../base/color';
+@import '../base/font';
+
+
 
 .session-page{
+  height: 100%;
   display: flex;
   justify-content: space-around;
 }
 
 .session-welcome {
-  margin: 80px 200px 80px 50px;
+  margin: 30px 200px 50px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+.session-welcome-msg {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.session-welcome-title {
+  font-size: 40px;
+  font-family: cursive;
+  margin: 10px;
+}
+
+.session-welcome-line {
+  font-size: 20px;
+  font-family: cursive;
+}
+
 .session-welcome-img {
+  opacity: 0.9;
+  box-shadow: 5px 5px 20px $dark-gray;
 }
 
 .session-section {
   border: 1px solid black;
   border-radius: 5%;
-  height: 640px;
-  width: 320px;
-  margin: 80px;
-  margin-right: 50px;
-  padding: 20px;
-  font-size: 28px;
+  // height: 640px;
+  // width: 320px;
+  margin: 80px 50px 80px 100px;
+  height: 30%;
+  // margin-right: 50px;
+  padding: 5px;
+  font-size: 22px;
   display: flex;
   flex-direction: column;
   flex-basis: 4,1;
@@ -53,7 +77,7 @@
   flex-grow: 4;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: space-around;
 }
 
 .session-input {

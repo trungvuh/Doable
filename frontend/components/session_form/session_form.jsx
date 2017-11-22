@@ -99,7 +99,7 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 onChange={this.handleInput('password')}
                 required="true"
-                className="session-input"/>
+                className="session-input" />
 
               <input
                 type="submit"
