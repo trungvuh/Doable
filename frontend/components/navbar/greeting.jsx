@@ -11,6 +11,7 @@ const personalGreeting = (currentUser, logout) => (
 const sessionLinks = () => (
   <div className="navbar-button">
       <Link className="btn" to="/login">Log In</Link>
+      <span className="pipe">|</span>
       <Link className="btn" to="/signup">Sign Up</Link>
   </div>
 );

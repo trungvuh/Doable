@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+//CSS reset
+@import 'base/reset';
+
+//Base
+@import 'base/font';
+@import 'base/color';
+@import 'navbar/navbar';
+
+body {
+  font-family: $helvetica;
+  background: $light-teal;
+  color: $gray;
+  font-size: 12px;
+  height: 100%;
+}

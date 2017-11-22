@@ -8,11 +8,15 @@ import SessionFormContainer from './session_form/session_form_container';
 // import SearchContainer from './bench_index/search_container';
 
 
+// <img src="http://res.cloudinary.com/trungvuh/image/upload/v1511315505/Baymax_cm87vo.png" className="logo"/>
+
 const App = () => (
   <div>
-    <header className="nav-bar">
-      <h1>Doable</h1>
-      <GreetingContainer />
+    <header className="header-nav">
+      <div className="nav-bar">
+        <span className="appname">Doable</span>
+        <GreetingContainer className="GC" />
+      </div>
     </header>
 
     <AuthRoute path='/login' component={SessionFormContainer}/>
