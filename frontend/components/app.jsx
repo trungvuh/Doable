@@ -14,10 +14,13 @@ const App = () => (
   <div>
     <header className="header-nav">
       <div className="nav-bar">
-        <span className="appname">Doable</span>
-        <GreetingContainer />
+        <div className="appname">Doable</div>
+        <GreetingContainer  />
       </div>
     </header>
+
+    <img src="http://res.cloudinary.com/trungvuh/image/upload/c_fill,h_700,w_1300/v1511340654/24_izm9b5.jpg"
+      className="background-pic"/>
 
     <AuthRoute path='/login' component={SessionFormContainer}/>
     <AuthRoute path='/signup' component={SessionFormContainer}/>

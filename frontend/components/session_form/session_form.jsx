@@ -64,16 +64,15 @@ class SessionForm extends React.Component {
 
     const title = (this.props.formType === 'login') ? 'Sign In' : 'Sign Up';
     const otherTitle = (this.props.formType === 'login') ? 'New User' : 'Already a User?';
-    const capitalTitle = (title === 'Sign In') ? 'SIGN IN' : 'SIGN UP';
+    const capitalTitle = title.toUpperCase();
 
     return (
       <div className="session-section">
         <div className="main-session-form">
-            <div className="session-title">{title}</div>
-
+          <div className="session-title">{title}</div>
 
             <form onSubmit={this.handleSubmit} className="session-form">
-            {this.renderErrors()}
+              {this.renderErrors()}
 
               <span>Username:</span>
               <input
@@ -99,7 +98,7 @@ class SessionForm extends React.Component {
               <button className="session-button">DEMO</button>
             </form>
 
-        </div>
+          </div>
         <div className="other-session-form">
           <span className="session--other-title">{otherTitle}</span>
           <br/>
