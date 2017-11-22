@@ -4,12 +4,28 @@
 
 @import '../base/color';
 
+.session-page{
+  display: flex;
+  justify-content: space-around;
+}
+
+.session-welcome {
+  margin: 80px 200px 80px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.session-welcome-img {
+}
+
 .session-section {
   border: 1px solid black;
   border-radius: 5%;
   height: 640px;
   width: 320px;
-  margin: 100px;
+  margin: 80px;
+  margin-right: 50px;
   padding: 20px;
   font-size: 28px;
   display: flex;

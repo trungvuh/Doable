@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import GreetingContainer from './navbar/greeting_container';
+import GreetingContainer from '../navbar/greeting_container';
 
 
 
