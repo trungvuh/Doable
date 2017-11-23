@@ -10,4 +10,13 @@ const BackgroundImg = () => (
 
 );
 
+
+//
+// const img1 = <div> </div>
+// const img2 = < div>
+//
+// setInterval(aowiejfoiaw){
+//
+// }
+
 export default BackgroundImg;
