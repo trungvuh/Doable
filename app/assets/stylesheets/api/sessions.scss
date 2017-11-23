@@ -24,6 +24,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  color: $kinda-orange;
 }
 
 .session-welcome-title {
@@ -45,32 +46,41 @@
 }
 
 .session-section {
+  background: $white;
   border: 1px solid black;
   border-radius: 5%;
-  // height: 640px;
-  // width: 320px;
-  margin: 80px 50px 80px 100px;
-  height: 30%;
-  // margin-right: 50px;
-  padding: 10px;
-  font-size: 22px;
+  margin: 80px 50px 60px 100px;
+  height: 32%;
+  padding: 5px;
+  font-size: 17px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+  color: $dark-red;
   flex-basis: 4,1;
   box-shadow: 5px 5px 0.5px $dark-gray;
 }
 
 .main-session-form {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   height: 80%;
   border-bottom: 1px dashed $darkest-blue;
   flex-grow: 4;
 }
 
+.main-session-form ul {
+  max-width: 230px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
 .session-title {
-  display: block;
+  display: flex;
   padding: 20px;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .session-form {
@@ -78,6 +88,7 @@
   padding: 20px;
   flex-grow: 4;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: space-around;
 }
@@ -101,7 +112,8 @@
   width: 100px;
   height: 30px;
   font-size: 20px;
-  color: $darkest-blue;
+  color: $kinda-teal;
   background: $dawn-pink;
-  margin: 5px 0;
+  margin-top: 10px;
+  cursor: pointer;
 }

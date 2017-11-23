@@ -18,6 +18,10 @@ class SessionForm extends React.Component {
     document.title = "Doable - Login";
   }
 
+  componentWillUnmount() {
+    this.props.receiveSessionErrors([]);
+  }
+
   //look over this one when have time
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
@@ -74,46 +78,48 @@ class SessionForm extends React.Component {
   render () {
 
     const title = (this.props.formType === 'login') ? 'Sign In' : 'Sign Up';
-    const otherTitle = (this.props.formType === 'login') ? 'New User' : 'Already a User?';
+    const otherTitle = (this.props.formType === 'login') ? 'New User?' : 'Already a User?';
     const capitalTitle = title.toUpperCase();
 
     return (
       <div className="session-section">
         <div className="main-session-form">
-          <div className="session-title">{title}</div>
-
-            <form onSubmit={this.handleSubmit} className="session-form">
-              {this.renderErrors()}
-
-              <span>Username:</span>
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.handleInput('username')}
-                required="true"
-                className="session-input" />
-
-              <span>Password:</span>
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.handleInput('password')}
-                required="true"
-                className="session-input" />
-
-              <input
-                type="submit"
-                value={capitalTitle}
-                className="session-button" />
-
-              <button
-                className="session-button"
-                onClick={this.demoLogin}>
-                DEMO
-              </button>
-            </form>
-
+          <div className="session-title">
+            {title}
+            {this.renderErrors()}
           </div>
+
+          <form onSubmit={this.handleSubmit} className="session-form">
+
+            <span>Username:</span>
+            <input
+              type="text"
+              value={this.state.username}
+              onChange={this.handleInput('username')}
+              required="true"
+              className="session-input" />
+
+            <span>Password:</span>
+            <input
+              type="password"
+              value={this.state.password}
+              onChange={this.handleInput('password')}
+              required="true"
+              className="session-input" />
+
+            <input
+              type="submit"
+              value={capitalTitle}
+              className="session-button" />
+
+            <button
+              className="session-button"
+              onClick={this.demoLogin}>
+              DEMO
+            </button>
+          </form>
+
+        </div>
         <div className="other-session-form">
           <span className="session--other-title">{otherTitle}</span>
           <br/>

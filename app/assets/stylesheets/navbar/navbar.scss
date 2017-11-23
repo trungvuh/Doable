@@ -11,14 +11,14 @@
   display: flex;
   justify-content: space-between;
   width: inherit;
+  height: inherit;
   // margin: 10px;
   background: $iron;
   border-bottom: 1px solid $lightest-gray;
 }
 
 .appname {
-  margin: 20px;
-  margin-left: 100px;
+  margin: 10px 0 0 100px;
   font-family: $pacifico;
   font-size: 40px;
   font-weight: 550;
@@ -35,8 +35,8 @@
   font-family: inherit;
   font-size: 13px;
   position: absolute;
-  top: 63px;
-  left: 93px;
+  top: 58px;
+  left: 94px;
 }
 
 .navbar-button {
