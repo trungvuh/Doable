@@ -24,7 +24,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  color: $kinda-orange;
+  color: $dark-gray;
+  font-weight: bold;
 }
 
 .session-welcome-title {
@@ -36,6 +37,7 @@
 .session-welcome-line {
   font-size: 20px;
   font-family: cursive;
+  margin: 10px;
 }
 
 .session-welcome-img {
@@ -47,7 +49,7 @@
 
 .session-section {
   background: $white;
-  border: 1px solid black;
+  border: 1px solid $gray;
   border-radius: 5%;
   margin: 80px 50px 60px 100px;
   height: 32%;
@@ -56,9 +58,9 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  color: $light-red;
+  color: $gray;
   flex-basis: 4,1;
-  box-shadow: 5px 5px 0.5px $dark-gray;
+  box-shadow: 5px 5px 2px $gray;
 }
 
 .main-session-form {
@@ -74,6 +76,7 @@
   max-width: 230px;
   margin-top: 10px;
   font-size: 14px;
+  color: $light-red;
 }
 
 .session-title {
@@ -116,11 +119,11 @@
   background: $dawn-pink;
   margin-top: 10px;
   cursor: pointer;
-  transition: 1s;
+  transition: 0.1s;
 }
 
 .session-button:hover {
-  transform: translateY(-3px);
-  transition: 1s;
-  box-shadow: 0 2px 5px black;
+  transform: translateY(-1px);
+  transition: 0.1s;
+  box-shadow: 0 1px 1px black;
 }

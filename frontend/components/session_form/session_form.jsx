@@ -58,7 +58,7 @@ class SessionForm extends React.Component {
     else {
       return (
         <Link to="/login">
-          <button className="session-button">SIGN IN</button>
+          <button className="session-button">LOG IN</button>
         </Link>
       );
     }
@@ -77,7 +77,7 @@ class SessionForm extends React.Component {
 
   render () {
 
-    const title = (this.props.formType === 'login') ? 'Sign In' : 'Sign Up';
+    const title = (this.props.formType === 'login') ? 'Log In' : 'Sign Up';
     const otherTitle = (this.props.formType === 'login') ? 'New User?' : 'Already a User?';
     const capitalTitle = title.toUpperCase();
 
