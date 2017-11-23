@@ -14,7 +14,7 @@
 }
 
 .session-welcome {
-  margin: 30px 200px 50px 50px;
+  margin: 20px 200px 70px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,7 +38,8 @@
 }
 
 .session-welcome-img {
-  opacity: 0.9;
+  margin-top: 10px;
+  opacity: 0.85;
   box-shadow: 5px 5px 20px $dark-gray;
   border-radius: 2px;
 }
@@ -51,7 +52,7 @@
   margin: 80px 50px 80px 100px;
   height: 30%;
   // margin-right: 50px;
-  padding: 20px;
+  padding: 10px;
   font-size: 22px;
   display: flex;
   flex-direction: column;
