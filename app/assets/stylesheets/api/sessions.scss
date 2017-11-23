@@ -116,4 +116,11 @@
   background: $dawn-pink;
   margin-top: 10px;
   cursor: pointer;
+  transition: 1s;
+}
+
+.session-button:hover {
+  transform: translateY(-3px);
+  transition: 1s;
+  box-shadow: 0 2px 5px black;
 }
