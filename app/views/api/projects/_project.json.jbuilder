@@ -1,2 +1,6 @@
-json.image_url asset_path(project.img_url)
-json.extract! project, :title, :category, :description
+json.img_url asset_path(project.img_url)
+json.extract! project, :id, :title, :category
+
+json.creator do
+  json.name project.creator.username
+end

@@ -9,7 +9,7 @@ export default ({project}) => {
         width = "300px"
         className="project-index-img" />
       <span>{project.title}</span>
-      <span>by {project.creator.username} in {project.category}</span>
+      <span>by {project.creator.name} in {project.category}</span>
     </li>
   );
 };
