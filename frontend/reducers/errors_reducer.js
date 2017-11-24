@@ -1,9 +1,11 @@
-
 import { combineReducers } from 'redux';
-import sessionErrorReducer from './session_errors_reducer';
+
+import session from './session_errors_reducer';
+import project from './project_errors_reducer';
 
 const errorsReducer = combineReducers({
-  session: sessionErrorReducer
+  session,
+  project,
 });
 
 export default errorsReducer;

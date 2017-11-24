@@ -7,8 +7,7 @@ import Logo from './util/logo';
 import BackgroundImg from './util/background_img';
 import Footer from './util/footer';
 
-import SessionFormContainer from './session_form/session_form_container';
-import SessionWelcome from './session_form/session_welcome';
+import SessionPage from './session_form/session_page';
 
 // import SearchContainer from './bench_index/search_container';
 
@@ -23,13 +22,7 @@ const App = () => (
 
     <Route exact path='/' component={BackgroundImg}/>
 
-    <div className="session-page">
-      <AuthRoute path='/login' component={SessionFormContainer}/>
-      <AuthRoute path='/login' component={SessionWelcome}/>
-
-      <AuthRoute path='/signup' component={SessionFormContainer}/>
-      <AuthRoute path='/signup' component={SessionWelcome}/>
-    </div>
+    <SessionPage />
 
     <footer className='footer-nav'>
       <Footer />
