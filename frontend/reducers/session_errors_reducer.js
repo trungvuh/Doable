@@ -3,10 +3,6 @@ import {
   RECEIVE_SESSION_ERRORS,
 } from '../actions/session_actions';
 
-// const _nullErrors = {
-//   errors: []
-// };
-
 const sessionErrorsReducer = (state = [], action) => {
   Object.freeze(state);
 
