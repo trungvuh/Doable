@@ -7,12 +7,11 @@ import Logo from './util/logo';
 import BackgroundImg from './util/background_img';
 import Footer from './util/footer';
 
+import ProjectIndexContainer from './project/project_index_container';
 import SessionPage from './session_form/session_page';
 
 // import SearchContainer from './bench_index/search_container';
 
-
-// <img src="http://res.cloudinary.com/trungvuh/image/upload/v1511315505/Baymax_cm87vo.png" className="logo"/>
 
 const App = () => (
   <div className="whole-page">
@@ -21,6 +20,7 @@ const App = () => (
     </header>
 
     <Route exact path='/' component={BackgroundImg}/>
+    <Route exact path='/' component={ProjectIndexContainer}/>
 
     <SessionPage />
 

@@ -42,6 +42,30 @@ project1 = Project.create(
   img_url: "https://res.cloudinary.com/trungvuh/image/upload/c_fill,h_500,w_500,y_0/v1511543426/busyboardsquare-1_lz7cma.jpg",
   creator_id: user1.id
 )
+project2 = Project.create(
+  title: "DIY child swing",
+  description: "<p>Here's a little summer challenge for you! I put together somekind of instructions for this DIY children's swing. The model of this swing is a DIY version of a finnish children’s swing from somewhere between 70's and 80’s. My mother made a swing like this to me when I was a kid and now she made one for my daughter as well. Here are instructions to make your own children’s swing!<p></br></br>
+  <p>Please notice that the swing with these measures is for a child between about 1-3 age -depending on a child's weight. You can support smaller babies with pillows to sit in the swing. To make the swing stronger you can try to use thicker wood sticks and thicker rope (you can check the weight limit of the rope while buying) with well sealed knot closings.<p></br></br>
+  <ul>Materials for a  Board<ul>
+  <li>2 large plywood boards (one thick, one thin)</li>
+  <li>Router</li>
+  <li>Various door locks</li>
+  <li>Combination lock</li>
+  <li>Hose faucet</li>
+  <li>Toggle switch</li>
+  <li>Rope and pulley</li>
+  <li>Light switch</li>
+  <li>Caster wheel</li>
+  <li>Utility chain</li>
+  <li>Various screws</li></br></br>
+  <p>What makes our board just a little different is that the doors open to reveal photos. We loved the idea of the boards we saw on Pinterest, but wanted the locks and doors to be functional and have purpose.<p></br></br>
+  <p>To do this, my husband used two pieces of plywood, one thick and one thin. The thick board is the top layer. In that piece, he cut out the doors using a router then attached a thin piece of plywood to the back using screws.<p></br></br>
+  <p>I added photos using double sided tape as a way to teach our kids the names and faces of extended family members. “Go find Grandma!” Watching those little brains work to remember which door and which face is priceless.<p></br></br>
+  <p>Building a toddler busy board is one of the best DIY projects we’ve done and I’m so happy we have it. I can’t imagine ever getting rid of this! It has “future grandkids” written all over it. The added element of being a peek-a-boo toddler busy board makes it just a little more special.<p></br></br>",
+  category: "Active",
+  img_url: "http://res.cloudinary.com/trungvuh/image/upload/c_scale,h_500,w_500/v1511545432/swing_1_rnkae3.jpg",
+  creator_id: user1.id
+)
 project3 = Project.create(
   title: "BUSY BOARD FOR A BUSY {BIRTHDAY} BOY!",
   description: "<p>Busy boards are just so cool!<p></br></br>
@@ -65,30 +89,6 @@ project3 = Project.create(
   category: "Busy Board",
   img_url: "http://res.cloudinary.com/trungvuh/image/upload/c_fill,h_500,w_500/v1511544567/busy-board-3_ehzl9b.jpg",
   creator_id: user2.id
-)
-project6 = Project.create(
-  title: "Make Your Own Felt Board (Tutorial)",
-  description: "<p>Busy boards are just so cool!<p></br></br>
-  <p>They’re an awesome DIY toy perfect for babies, toddlers, preschoolers, parents in their thirties… We made this board almost two years ago and it is still the most played with toy at our house by all the little ones who visit. It’s pretty much Hansel: it’s so hot right now.<p></br></br>
-  <ul>Materials for a  Board<ul>
-  <li>2 large plywood boards (one thick, one thin)</li>
-  <li>Router</li>
-  <li>Various door locks</li>
-  <li>Combination lock</li>
-  <li>Hose faucet</li>
-  <li>Toggle switch</li>
-  <li>Rope and pulley</li>
-  <li>Light switch</li>
-  <li>Caster wheel</li>
-  <li>Utility chain</li>
-  <li>Various screws</li></br></br>
-  <p>What makes our board just a little different is that the doors open to reveal photos. We loved the idea of the boards we saw on Pinterest, but wanted the locks and doors to be functional and have purpose.<p></br></br>
-  <p>To do this, my husband used two pieces of plywood, one thick and one thin. The thick board is the top layer. In that piece, he cut out the doors using a router then attached a thin piece of plywood to the back using screws.<p></br></br>
-  <p>I added photos using double sided tape as a way to teach our kids the names and faces of extended family members. “Go find Grandma!” Watching those little brains work to remember which door and which face is priceless.<p></br></br>
-  <p>Building a toddler busy board is one of the best DIY projects we’ve done and I’m so happy we have it. I can’t imagine ever getting rid of this! It has “future grandkids” written all over it. The added element of being a peek-a-boo toddler busy board makes it just a little more special.<p></br></br>",
-  category: "Busy Board",
-  img_url: "http://res.cloudinary.com/trungvuh/image/upload/c_fill,w_600/v1511544685/busy-board-4_bc652b.png",
-  creator_id: user3.id
 )
 project4 = Project.create(
   title: "Spider’s Web Discovery Basket",
@@ -138,10 +138,10 @@ project5 = Project.create(
   img_url: "http://res.cloudinary.com/trungvuh/image/upload/c_fill,h_500,w_500/v1511545010/Baby-Mittens-1_k7molo.jpg",
   creator_id: user5.id
 )
-project2 = Project.create(
-  title: "DIY child swing",
-  description: "<p>Here's a little summer challenge for you! I put together somekind of instructions for this DIY children's swing. The model of this swing is a DIY version of a finnish children’s swing from somewhere between 70's and 80’s. My mother made a swing like this to me when I was a kid and now she made one for my daughter as well. Here are instructions to make your own children’s swing!<p></br></br>
-  <p>Please notice that the swing with these measures is for a child between about 1-3 age -depending on a child's weight. You can support smaller babies with pillows to sit in the swing. To make the swing stronger you can try to use thicker wood sticks and thicker rope (you can check the weight limit of the rope while buying) with well sealed knot closings.<p></br></br>
+project6 = Project.create(
+  title: "Make Your Own Felt Board (Tutorial)",
+  description: "<p>Busy boards are just so cool!<p></br></br>
+  <p>They’re an awesome DIY toy perfect for babies, toddlers, preschoolers, parents in their thirties… We made this board almost two years ago and it is still the most played with toy at our house by all the little ones who visit. It’s pretty much Hansel: it’s so hot right now.<p></br></br>
   <ul>Materials for a  Board<ul>
   <li>2 large plywood boards (one thick, one thin)</li>
   <li>Router</li>
@@ -158,7 +158,7 @@ project2 = Project.create(
   <p>To do this, my husband used two pieces of plywood, one thick and one thin. The thick board is the top layer. In that piece, he cut out the doors using a router then attached a thin piece of plywood to the back using screws.<p></br></br>
   <p>I added photos using double sided tape as a way to teach our kids the names and faces of extended family members. “Go find Grandma!” Watching those little brains work to remember which door and which face is priceless.<p></br></br>
   <p>Building a toddler busy board is one of the best DIY projects we’ve done and I’m so happy we have it. I can’t imagine ever getting rid of this! It has “future grandkids” written all over it. The added element of being a peek-a-boo toddler busy board makes it just a little more special.<p></br></br>",
-  category: "Active",
-  img_url: "http://res.cloudinary.com/trungvuh/image/upload/c_scale,h_500,w_500/v1511545432/swing_1_rnkae3.jpg",
-  creator_id: user1.id
+  category: "Busy Board",
+  img_url: "http://res.cloudinary.com/trungvuh/image/upload/c_fill,w_600/v1511544685/busy-board-4_bc652b.png",
+  creator_id: user3.id
 )

@@ -26,7 +26,7 @@ export const receiveProjectErrors = errors => ({
 });
 
 export const fetchProjects = () => dispatch => (
-  ProjectAPIUtil.fetchProjecs()
+  ProjectAPIUtil.fetchProjects()
     .then(allProjects => dispatch(receiveProjects(allProjects)))
 );
 
