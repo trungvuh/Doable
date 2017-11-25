@@ -48,7 +48,7 @@ class ProjectDetail extends React.Component {
 
     if (!project) {
       return (
-        <LoadingIcon />
+        <LoadingIcon loading={loading}/>
       );
     }
     else {

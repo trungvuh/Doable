@@ -14,7 +14,7 @@ class ProjectIndex extends React.Component {
 
     return (
       loading ?
-      <LoadingIcon /> :
+      <LoadingIcon loading={loading}/> :
       <div className="projects-index">
         <ul>
           {
