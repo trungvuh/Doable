@@ -38,7 +38,7 @@ class Api::ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     if @project
-      @project.destroy
+      @project.destroy!
       render '/api/users/show'
     else
       render json: ["Can't delete this project"], status: 404
@@ -46,7 +46,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   private
-  
+
   def project_params
     params.require(:project).permit(:title, :description, :img_url, :category)
   end

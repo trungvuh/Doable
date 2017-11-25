@@ -3,27 +3,11 @@ export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 export const RECEIVE_PROJECT_ERRORS = 'RECEIVE_PROJECT_ERRORS';
 
+export const LOADING_PROJECT = 'LOADING_PROJECT';
+export const LOADING_PROJECTS = 'LOADING_PROJECTS';
+
 import * as ProjectAPIUtil from '../utils/project_api_util';
 
-
-export const receiveProjects = projects => ({
-  type: RECEIVE_PROJECTS,
-  projects
-});
-
-export const receiveProject = project => ({
-  type: RECEIVE_PROJECT,
-  project
-});
-
-export const removeProject = project => ({
-  type: REMOVE_PROJECT
-});
-
-export const receiveProjectErrors = errors => ({
-  type: RECEIVE_PROJECT_ERRORS,
-  errors
-});
 
 export const fetchProjects = () => dispatch => (
   ProjectAPIUtil.fetchProjects()
@@ -51,10 +35,39 @@ export const updateProject = project => dispatch => (
     )
 );
 
-export const deleteProject = project => dispatch => (
-  ProjectAPIUtil.deleteProject(project)
+export const deleteProject = projectId => dispatch => (
+  ProjectAPIUtil.deleteProject(projectId)
     .then(
-      oldProject => dispatch(removeProject(oldProject)),
+       project => dispatch(removeProject(projectId)),
       error => dispatch(receiveProjectErrors(error.responseJSON))
     )
 );
+
+
+export const receiveProjects = projects => ({
+  type: RECEIVE_PROJECTS,
+  projects
+});
+
+export const receiveProject = project => ({
+  type: RECEIVE_PROJECT,
+  project
+});
+
+export const removeProject = projectId => ({
+  type: REMOVE_PROJECT,
+  projectId
+});
+
+export const receiveProjectErrors = errors => ({
+  type: RECEIVE_PROJECT_ERRORS,
+  errors
+});
+
+export const loadingProjects = () => ({
+  type: LOADING_PROJECTS
+});
+
+export const loadingProject = () => ({
+  type: LOADING_PROJECT
+});

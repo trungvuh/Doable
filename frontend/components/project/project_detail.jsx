@@ -1,8 +1,13 @@
 import React from 'react';
 import Parser from 'html-react-parser';
+import LoadingIcon from '../util/loading_icon';
+
 import { render } from 'react-dom';
 
 class ProjectDetail extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   componentDidMount() {
     this.props.fetchProject(this.props.match.params.projectId);
@@ -14,18 +19,32 @@ class ProjectDetail extends React.Component {
     }
   }
 
-  // renderDescription() {
-  //   render(
-  //     Parser(`${this.props.project.description}`)
-  //   );
-  // }
+  deleteButton() {
+    const currentUserId = this.props.currentUser.id;
+    const creatorId = this.props.project.creator_id;
+    const project = this.props.project;
+
+    if ( currentUserId !== creatorId && !project ) {
+      return (
+        <div></div>
+      );
+    }
+    else {
+      return (
+        <button
+          onClick={() => this.props.deleteProject(project.id)}>
+          Delete Project
+        </button>
+      );
+    }
+  }
 
   render() {
-    const { project } = this.props;
+    const { project, loading } = this.props;
 
     if (!project) {
       return (
-        <div> Loading </div>
+        <LoadingIcon />
       );
     }
     else {
@@ -37,11 +56,12 @@ class ProjectDetail extends React.Component {
             width = "600px"
             className="project-detail-img" />
           <h1>{project.title}</h1>
-          <span>Category: {project.category}</span>
-          <span>by {project.creator.name}</span>
+          <div>Category: {project.category}</div>
+          <div>Created by: {project.creator.name}</div>
           <div className="project-description">
-            {project.description}
+            {Parser(project.description)}
           </div>
+          {this.deleteButton()}
         </div>
       );
     }

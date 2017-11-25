@@ -5,7 +5,7 @@ export const fetchProjects = () => (
   })
 );
 
-export const fetchProject = (id) => (
+export const fetchProject = id => (
   $.ajax({
     method: 'GET',
     url: `/api/projects/${id}`
@@ -28,9 +28,9 @@ export const updateProject = project => (
   })
 );
 
-export const deleteProject = project => (
+export const deleteProject = id => (
   $.ajax({
     method: 'DELETE',
-    url: `api/projects/${project.id}`
+    url: `api/projects/${id}`
   })
 );

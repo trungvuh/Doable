@@ -9,8 +9,7 @@
 User.destroy_all
 Project.destroy_all
 
-User.create(username: "demo100", password: "password");
-User.create(username: "demo", password: "password");
+demo_user = User.create(username: "Baby_demo", password: "password");
 user1 = User.create(username: "Trung", password: "vhtm220");
 user2 = User.create(username: "Roger", password: "vhtm220");
 user3 = User.create(username: "Rafael", password: "vhtm220");
@@ -40,7 +39,7 @@ project1 = Project.create(
   <p>Building a toddler busy board is one of the best DIY projects we’ve done and I’m so happy we have it. I can’t imagine ever getting rid of this! It has “future grandkids” written all over it. The added element of being a peek-a-boo toddler busy board makes it just a little more special.<p></br></br>",
   category: "Busy Board",
   img_url: "https://res.cloudinary.com/trungvuh/image/upload/c_fill,h_500,w_500,y_0/v1511543426/busyboardsquare-1_lz7cma.jpg",
-  creator_id: user1.id
+  creator_id: demo_user.id
 )
 project2 = Project.create(
   title: "DIY child swing",

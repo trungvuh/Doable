@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Route, Link } from 'react-router-dom';
-import { AuthRoute } from '../utils/route_util';
+import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 
 import Logo from './util/logo';
 import Footer from './util/footer';
@@ -18,7 +18,7 @@ const App = () => (
 
     <HomePage />
 
-    <Route path="/projects/:projectId" component={ProjectDetailContainer} />
+    <ProtectedRoute path="/projects/:projectId" component={ProjectDetailContainer} />
 
     <SessionPage />
 
