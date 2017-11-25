@@ -4,14 +4,11 @@ import { Route, Link } from 'react-router-dom';
 import { AuthRoute } from '../utils/route_util';
 
 import Logo from './util/logo';
-import BackgroundImg from './util/background_img';
 import Footer from './util/footer';
+import HomePage from './util/homepage';
 
-import ProjectIndexContainer from './project/project_index_container';
+import ProjectDetailContainer from './project/project_detail_container';
 import SessionPage from './session_form/session_page';
-
-// import SearchContainer from './bench_index/search_container';
-
 
 const App = () => (
   <div className="whole-page">
@@ -19,8 +16,9 @@ const App = () => (
       <Logo />
     </header>
 
-    <Route exact path='/' component={BackgroundImg}/>
-    <Route exact path='/' component={ProjectIndexContainer}/>
+    <HomePage />
+
+    <Route path="/projects/:projectId" component={ProjectDetailContainer} />
 
     <SessionPage />
 
@@ -30,7 +28,5 @@ const App = () => (
 
   </div>
 );
-
-// <Route exact path='/' component={SearchContainer}/>
 
 export default App;

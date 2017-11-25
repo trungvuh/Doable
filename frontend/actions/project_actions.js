@@ -1,5 +1,5 @@
-export const RECEIVE_PROJECTS = 'RECEIVE_ALL_PROJECTS';
-export const RECEIVE_PROJECT = 'RECEIVE_ONE_PROJECT';
+export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS';
+export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 export const RECEIVE_PROJECT_ERRORS = 'RECEIVE_PROJECT_ERRORS';
 
@@ -27,12 +27,12 @@ export const receiveProjectErrors = errors => ({
 
 export const fetchProjects = () => dispatch => (
   ProjectAPIUtil.fetchProjects()
-    .then(allProjects => dispatch(receiveProjects(allProjects)))
+    .then(projects => dispatch(receiveProjects(projects)))
 );
 
 export const fetchProject = id => dispatch => (
   ProjectAPIUtil.fetchProject(id)
-    .then(oneProject => dispatch(receiveProject(oneProject)))
+    .then(project => dispatch(receiveProject(project)))
 );
 
 export const createProject = project => dispatch => (

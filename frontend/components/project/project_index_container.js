@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchProjects: projects => dispatch(fetchProjects(projects))
+  fetchProjects: () => dispatch(fetchProjects())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectIndex);
