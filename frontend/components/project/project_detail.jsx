@@ -9,7 +9,7 @@ class ProjectDetail extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchProject(this.props.match.params.projectId);
   }
 
@@ -19,12 +19,16 @@ class ProjectDetail extends React.Component {
     }
   }
 
+  componentWillUnMount() {
+    this.props.history.push('/');
+  }
+
   deleteButton() {
     const currentUserId = this.props.currentUser.id;
-    const creatorId = this.props.project.creator_id;
+    const creatorId = this.props.project.creator.id;
     const project = this.props.project;
 
-    if ( currentUserId !== creatorId && !project ) {
+    if ( currentUserId !== creatorId ) {
       return (
         <div></div>
       );
