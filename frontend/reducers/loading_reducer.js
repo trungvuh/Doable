@@ -22,6 +22,8 @@ const loadingReducer = (state = initialState, action) => {
       return merge({}, state, { indexLoading: false });
 
     case RECEIVE_PROJECT:
+      return merge({}, state, { detailLoading: false });
+
     case REMOVE_PROJECT:
     case RECEIVE_PROJECT_ERRORS:
       return merge({}, state, { detailLoading: false });

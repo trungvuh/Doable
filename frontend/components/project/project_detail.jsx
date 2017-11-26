@@ -1,6 +1,7 @@
 import React from 'react';
 import Parser from 'html-react-parser';
 import LoadingIcon from '../util/loading_icon';
+import { Link } from 'react-router-dom';
 
 import { render } from 'react-dom';
 
@@ -40,6 +41,15 @@ class ProjectDetail extends React.Component {
     }
   }
 
+  editButton() {
+    const projectId = this.props.match.params.projectId;
+    return (
+      <Link to={`/projects/${projectId}/edit`}>
+        <button>Edit Your Project</button>
+      </Link>
+    );
+  }
+
   render() {
     const { project, loading } = this.props;
 
@@ -62,6 +72,7 @@ class ProjectDetail extends React.Component {
           <div className="project-description">
             {Parser(project.description)}
           </div>
+          {this.editButton()}
           {this.deleteButton()}
         </div>
       );

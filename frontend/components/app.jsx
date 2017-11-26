@@ -9,6 +9,8 @@ import HomePage from './util/homepage';
 
 import ProjectDetailContainer from './project/project_detail_container';
 import ProjectCreateContainer from './project/project_create_container';
+import ProjectUpdateContainer from './project/project_update_container';
+
 import SessionPage from './session_form/session_page';
 
 const App = () => (
@@ -24,6 +26,7 @@ const App = () => (
 
     <Switch>
       <ProtectedRoute path="/projects/new" component={ProjectCreateContainer} />
+      <ProtectedRoute path="/projects/:projectId/edit" component={ProjectUpdateContainer} />
       <ProtectedRoute path="/projects/:projectId" component={ProjectDetailContainer} />
     </Switch>
 

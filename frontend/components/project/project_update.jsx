@@ -1,21 +1,10 @@
 import React from 'react';
 
-class ProjectCreate extends React.Component {
+class ProjectUpdate extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      title: "",
-      description: "",
-      category: "",
-      img_url: "",
-      creator_id: this.props.currentUser.id
-    };
-
+    this.state = this.props.project;
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentWillMount() {
-    document.title = "Doable - Create";
   }
 
   componentWillUnmount() {
@@ -50,7 +39,7 @@ class ProjectCreate extends React.Component {
     // console.log(this.props.currentUser);
     return (
       <div>
-        <h1>Create a New Project</h1>
+        <h1>Edit Project</h1>
           {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
           <label>Title:
@@ -83,11 +72,11 @@ class ProjectCreate extends React.Component {
               width="320"
               ></textarea>
           </label>
-          <button>Create Your Project</button>
+          <button>Update Your Project</button>
         </form>
       </div>
     );
   }
 }
 
-export default ProjectCreate;
+export default ProjectUpdate;

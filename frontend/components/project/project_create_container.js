@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { fetchProject, createProject, receiveProjectErrors } from '../../actions/project_actions';
+import { createProject, receiveProjectErrors } from '../../actions/project_actions';
 import ProjectCreate from './project_create';
 
 const mapStateToProps = (state) => {
@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) => {
 
   return {
     createProject: project => dispatch(createProject(project)),
-    receiveProjectErrors: error => dispatch(receiveProjectErrors(error))
+    receiveProjectErrors: errors => dispatch(receiveProjectErrors(errors))
   };
 };
 
