@@ -12,7 +12,7 @@ const Logo = () => (
     <div className="app-punch-line">Even a Baby Can Do It</div>
 
     <Link to='/projects/new'>
-      <button type="ijn">Create Project</button>
+      <button>Create Project</button>
     </Link>
     <GreetingContainer  />
   </div>

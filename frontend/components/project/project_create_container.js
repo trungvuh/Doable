@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
 
   return {
     currentUser: state.session.currentUser,
-    // loading: state.ui.loading.detailLoading,
+    loading: state.ui.loading.detailLoading,
     errors: state.errors.project
   };
 };

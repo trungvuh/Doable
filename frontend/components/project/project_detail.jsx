@@ -42,7 +42,7 @@ class ProjectDetail extends React.Component {
 
   render() {
     const { project, loading } = this.props;
-    // console.log(this.props);
+
     if (!project) {
       return (
         <LoadingIcon loading={loading}/>

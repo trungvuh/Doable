@@ -22,9 +22,10 @@ const App = () => (
       <Route exact path='/projects' component={HomePage} />
     </Switch>
 
-    <ProtectedRoute path="/projects/:projectId" component={ProjectDetailContainer} />
-
-    <ProtectedRoute path="/projects/new" component={ProjectCreateContainer} />
+    <Switch>
+      <ProtectedRoute path="/projects/new" component={ProjectCreateContainer} />
+      <ProtectedRoute path="/projects/:projectId" component={ProjectDetailContainer} />
+    </Switch>
 
     <SessionPage />
 
