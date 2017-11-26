@@ -25,34 +25,26 @@ export const fetchProject = id => dispatch => {
   );
 };
 
+export const createProject = project => dispatch => (
+  ProjectAPIUtil.createProject(project)
+  .then(newProject => {
+    dispatch(receiveProject(newProject));
+    return newProject;
+  }).fail(error => dispatch(receiveProjectErrors(error.responseJSON)))
+);
 
-export const createProject = project => dispatch => {
-  dispatch(loadingProject());
-  return (
-    ProjectAPIUtil.createProject(project)
-    .then(
-      newProject => dispatch(receiveProject(newProject)),
-      error => dispatch(receiveProjectErrors(error.responseJSON))
-    )
-  );
-};
-
-export const updateProject = project => dispatch => {
-  dispatch(loadingProject());
-  return (
-    ProjectAPIUtil.updateProject(project)
-    .then(
-      newProject => dispatch(receiveProject(newProject)),
-      error => dispatch(receiveProjectErrors(error.responseJSON))
-    )
-  );
-};
-
+export const updateProject = project => dispatch => (
+  ProjectAPIUtil.updateProject(project)
+  .then(newProject => {
+    dispatch(receiveProject(newProject));
+    return newProject;
+  }).fail(error => dispatch(receiveProjectErrors(error.responseJSON)))
+);
 
 export const deleteProject = projectId => dispatch => (
   ProjectAPIUtil.deleteProject(projectId)
     .then(
-       project => dispatch(removeProject(projectId)),
+      project => dispatch(removeProject(projectId)),
       error => dispatch(receiveProjectErrors(error.responseJSON))
     )
 );

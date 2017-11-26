@@ -13,14 +13,10 @@ class ProjectDetail extends React.Component {
     this.props.fetchProject(this.props.match.params.projectId);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.location.pathname !== this.props.location.pathname) {
-      this.props.fetchProject(nextProps.match.params.projectId);
-    }
-  }
-
-  // componentWillUnMount() {
-  //   this.props.history.push('/');
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.location.pathname !== this.props.location.pathname) {
+  //     this.props.fetchProject(nextProps.match.params.projectId);
+  //   }
   // }
 
   deleteButton() {

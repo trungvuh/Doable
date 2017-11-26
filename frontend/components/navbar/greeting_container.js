@@ -7,8 +7,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  logout: () => dispatch(logout())
-    .then(() => history.push('/'))
+  logout: () => dispatch(logout()).then(() => history.push('/'))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Greeting);

@@ -8,10 +8,12 @@ import GreetingContainer from '../navbar/greeting_container';
 const Logo = () => (
   <div className="nav-bar">
 
-      <Link to='/' className="appname">Doable</Link>
-      <div className="app-punch-line">Even a Baby Can Do It</div>
+    <Link to='/' className="appname">Doable</Link>
+    <div className="app-punch-line">Even a Baby Can Do It</div>
 
-
+    <Link to='/projects/new'>
+      <button type="ijn">Create Project</button>
+    </Link>
     <GreetingContainer  />
   </div>
 );

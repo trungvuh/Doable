@@ -1,28 +1,24 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { fetchProject, createProject, updateProject } from '../../actions/project_actions';
-import ProjectForm from './project_form';
+import { fetchProject, createProject, receiveProjectErrors } from '../../actions/project_actions';
+import ProjectCreate from './project_create';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
 
   return {
-    currentUser: state.
-    loading: state.ui.loading.detailLoading,
+    currentUser: state.session.currentUser,
+    // loading: state.ui.loading.detailLoading,
     errors: state.errors.project
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  const process = ownProps.match.path === '/' ? createProject : updateProject;
+const mapDispatchToProps = (dispatch) => {
 
   return {
-    fetchProject: id => dispatch(fetchProject(id)),
-    process: project => dispatch(process(project))
+    createProject: project => dispatch(createProject(project)),
+    receiveProjectErrors: error => dispatch(receiveProjectErrors(error))
   };
 };
 
-export default withRouter(connect(
-  mapStateToProps,
-  mapDispatchToProps)(ProjectForm)
-);
+export default connect(mapStateToProps,mapDispatchToProps)(ProjectCreate);
