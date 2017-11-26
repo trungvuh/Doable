@@ -6,6 +6,7 @@ import Root from './components/root';
 
 // import { fetchProjects } from '../../actions/project_actions';
 // import { login, signup, logout } from './utils/session_api_util';
+import { createProject } from './actions/project_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
-  // window.fetchProjects = () => dispatch(fetchProjects());
+  window.createProject = createProject;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);

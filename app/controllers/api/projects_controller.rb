@@ -39,7 +39,7 @@ class Api::ProjectsController < ApplicationController
 
     if @project
       @project.destroy!
-      render '/api/users/show'
+      render :index
     else
       render json: ["Can't delete this project"], status: 404
     end

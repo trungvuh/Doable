@@ -17,7 +17,7 @@ const projectReducer = (state = {}, action) => {
 
     case REMOVE_PROJECT:
       let nextState = merge({}, state);
-      delete nextState[action.project.id];
+      delete nextState[action.projectId];
       return nextState;
 
     default:

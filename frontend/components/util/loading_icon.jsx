@@ -1,16 +1,21 @@
 import React from 'react';
-import { ScaleLoader } from 'react-spinners';
+import { RingLoader } from 'react-spinners';
 
-const LoadingIcon = ({ loading }) => (
-  <div className="loading-icon">
-    <ScaleLoader
-      loading={loading}
-      height="35"
-      width="4"
-      margin="2px"
-      radius="2"
-      color="#36d7b7" />
-  </div>
-);
+class LoadingIcon extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render () {
+    const { loading } = this.props;
+    return (
+      <div className="loading-icon">
+        <RingLoader
+          size={50}
+          color={"#36d7b7"} />
+        </div>
+    );
+  }
+}
 
 export default LoadingIcon;

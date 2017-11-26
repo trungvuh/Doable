@@ -9,7 +9,7 @@ class ProjectDetail extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchProject(this.props.match.params.projectId);
   }
 
@@ -45,7 +45,7 @@ class ProjectDetail extends React.Component {
 
   render() {
     const { project, loading } = this.props;
-
+    // console.log(this.props);
     if (!project) {
       return (
         <LoadingIcon loading={loading}/>

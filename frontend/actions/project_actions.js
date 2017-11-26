@@ -9,31 +9,45 @@ export const LOADING_PROJECTS = 'LOADING_PROJECTS';
 import * as ProjectAPIUtil from '../utils/project_api_util';
 
 
-export const fetchProjects = () => dispatch => (
-  ProjectAPIUtil.fetchProjects()
+export const fetchProjects = () => dispatch => {
+  dispatch(loadingProjects());
+  return (
+    ProjectAPIUtil.fetchProjects()
     .then(projects => dispatch(receiveProjects(projects)))
-);
+  );
+};
 
-export const fetchProject = id => dispatch => (
-  ProjectAPIUtil.fetchProject(id)
+export const fetchProject = id => dispatch => {
+  dispatch(loadingProject());
+  return (
+    ProjectAPIUtil.fetchProject(id)
     .then(project => dispatch(receiveProject(project)))
-);
+  );
+};
 
-export const createProject = project => dispatch => (
-  ProjectAPIUtil.createProject(project)
+
+export const createProject = project => dispatch => {
+  dispatch(loadingProject());
+  return (
+    ProjectAPIUtil.createProject(project)
     .then(
       newProject => dispatch(receiveProject(newProject)),
       error => dispatch(receiveProjectErrors(error.responseJSON))
     )
-);
+  );
+};
 
-export const updateProject = project => dispatch => (
-  ProjectAPIUtil.updateProject(project)
+export const updateProject = project => dispatch => {
+  dispatch(loadingProject());
+  return (
+    ProjectAPIUtil.updateProject(project)
     .then(
       newProject => dispatch(receiveProject(newProject)),
       error => dispatch(receiveProjectErrors(error.responseJSON))
     )
-);
+  );
+};
+
 
 export const deleteProject = projectId => dispatch => (
   ProjectAPIUtil.deleteProject(projectId)

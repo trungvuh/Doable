@@ -5,13 +5,12 @@ import LoadingIcon from '../util/loading_icon';
 
 class ProjectIndex extends React.Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchProjects();
   }
 
   render () {
     const { projects, loading } = this.props;
-
     return (
       loading ?
       <LoadingIcon loading={loading}/> :
