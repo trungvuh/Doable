@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 
 import Logo from './util/logo';
@@ -16,7 +16,10 @@ const App = () => (
       <Logo />
     </header>
 
-    <HomePage />
+    <Switch>
+      <Route exact path='/' component={HomePage} />
+      <Route exact path='/projects' component={HomePage} />
+    </Switch>
 
     <ProtectedRoute path="/projects/:projectId" component={ProjectDetailContainer} />
 

@@ -19,9 +19,9 @@ class ProjectDetail extends React.Component {
     }
   }
 
-  componentWillUnMount() {
-    this.props.history.push('/');
-  }
+  // componentWillUnMount() {
+  //   this.props.history.push('/');
+  // }
 
   deleteButton() {
     const currentUserId = this.props.currentUser.id;
@@ -36,7 +36,8 @@ class ProjectDetail extends React.Component {
     else {
       return (
         <button
-          onClick={() => this.props.deleteProject(project.id)}>
+          onClick={() => this.props.deleteProject(project.id)
+            .then(() => this.props.history.push('/'))}>
           Delete Project
         </button>
       );

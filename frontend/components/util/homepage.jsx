@@ -6,8 +6,8 @@ import ProjectIndexContainer from '../project/project_index_container';
 
 const HomePage = () => (
   <div>
-    <Route exact path='/' component={BackgroundImg}/>
-    <Route exact path='/' component={ProjectIndexContainer}/>
+    <BackgroundImg />
+    <ProjectIndexContainer />
   </div>
 );
 
