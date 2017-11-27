@@ -10,9 +10,9 @@ class ProjectUpdate extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.project;
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleQuillInput = this.handleQuillInput.bind(this);
-    this.onImageDrop = this.onImageDrop.bind(this);
     this.navigateToShow = this.navigateToShow.bind(this);
   }
 
@@ -50,12 +50,6 @@ class ProjectUpdate extends React.Component {
   }
 
   onImageDrop(files) {
-    console.log("hi");
-    console.log(files);
-    this.setState({
-      uploadedFile: files[0]
-    });
-
     this.handleImageUpload(files[0]);
   }
 
@@ -96,6 +90,7 @@ class ProjectUpdate extends React.Component {
         <h1>Edit Project</h1>
           {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
+
           <label>Title:
             <input
               type="text"
@@ -103,6 +98,7 @@ class ProjectUpdate extends React.Component {
               onChange={this.handleInput('title')}
               />
           </label>
+
           <label>Category:
             <input
               type="text"
@@ -110,14 +106,14 @@ class ProjectUpdate extends React.Component {
               onChange={this.handleInput('category')}
               />
           </label>
+
           <br/>
-          <label>Image Link:
-            <input
-              type="text"
-              value={this.state.img_url}
-              onChange={this.handleInput('img_url')}
-              />
-          </label>
+          <Dropzone
+            onDrop={this.onImageDrop.bind(this)}
+            multiple={false}
+            accept="image/*">
+            <div>Drop an image or click here to upload a file</div>
+          </Dropzone>
 
 
           <label>Description
@@ -137,10 +133,6 @@ class ProjectUpdate extends React.Component {
   }
 }
 
-// <Dropzone
-//   onDrop={this.onImageDrop.bind(this)}
-//   multiple={false}
-//   accept="image/*">
-//   <div>Drop an image or click here to upload a file</div>
-//   </Dropzone>
+
+
 export default ProjectUpdate;
