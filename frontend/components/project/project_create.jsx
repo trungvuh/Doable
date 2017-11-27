@@ -16,6 +16,8 @@ class ProjectCreate extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.navigateHome = this.navigateHome.bind(this);
+    this.handleQuillInput = this.handleQuillInput.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
   }
 
   componentWillUnmount() {
@@ -40,6 +42,17 @@ class ProjectCreate extends React.Component {
     event.preventDefault();
     this.props.createProject(this.state)
       .then((project) => this.props.history.push(`/projects/${project.id}`));
+  }
+
+  handleUpload(event) {
+    event.preventDefault();
+    cloudinary.openUploadWidget(window.cloudinary_options, function(error, results){
+     if(!error){
+       this.setState({
+         img_url: results[0].url
+       });
+     }
+   }.bind(this));
   }
 
   renderErrors() {
@@ -78,14 +91,10 @@ class ProjectCreate extends React.Component {
               />
           </label>
 
-          <label>Image Link:
-            <input
-              type="text"
-              value={this.state.img_url}
-              onChange={this.handleInput('img_url')}
-              />
-          </label>
-          
+          <button onClick={this.handleUpload}>Upload Project Picture
+          </button>
+          <br/>
+
           <label>Description
             <ReactQuill
               onChange={this.handleQuillInput}
