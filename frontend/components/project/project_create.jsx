@@ -1,4 +1,7 @@
 import React from 'react';
+import ReactQuill from 'react-quill';
+import Dropzone from 'react-dropzone';
+import request from 'superagent';
 
 class ProjectCreate extends React.Component {
   constructor(props) {
@@ -18,6 +21,10 @@ class ProjectCreate extends React.Component {
     this.props.receiveProjectErrors([]);
   }
 
+  handleQuillInput(value) {
+    this.setState({ description: value });
+  }
+
   handleInput(type) {
     return (event) => {
       this.setState({ [type]: event.target.value });
@@ -27,7 +34,7 @@ class ProjectCreate extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.createProject(this.state)
-      .then(() => this.props.history.push('/'));
+      .then((project) => this.props.history.push(`/projects/${project.id}`));
   }
 
   renderErrors() {
@@ -70,14 +77,11 @@ class ProjectCreate extends React.Component {
               onChange={this.handleInput('img_url')}
               />
           </label>
-          <label>Description:
-            <textarea
-              type="text"
+          <label>Description
+            <ReactQuill
+              onChange={this.handleQuillInput}
               value={this.state.description}
-              onChange={this.handleInput('description')}
-              height="480"
-              width="320"
-              ></textarea>
+              className='quill'/>
           </label>
           <input type="submit" value="Create Project" />
         </form>
