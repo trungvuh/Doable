@@ -1,10 +1,18 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
 import Dropzone from 'react-dropzone';
+import DropzoneComponent from 'react-dropzone-component';
 import request from 'superagent';
 
 const CLOUDINARY_UPLOAD_PRESET = 'trungvu';
 const CLOUDINARY_UPLOAD_URL = ' https://api.cloudinary.com/v1_1/trungvuh/image/upload';
+
+// const Preview = (props) => (
+// (props.file) ?
+//   <div>
+//     <img style={{width: '100px', height: '100px'}} src={props.file.preview}/>
+//   </div> : <div>Drop an image or click here to upload a file</div>
+// );
 
 class ProjectUpdate extends React.Component {
   constructor(props) {
@@ -84,7 +92,8 @@ class ProjectUpdate extends React.Component {
 
 
   render () {
-    // console.log(this.props.currentUser);
+
+
     return (
       <div>
         <h1>Edit Project</h1>
@@ -108,13 +117,14 @@ class ProjectUpdate extends React.Component {
           </label>
 
           <br/>
-          <Dropzone
-            onDrop={this.onImageDrop.bind(this)}
-            multiple={false}
-            accept="image/*">
-            <div>Drop an image or click here to upload a file</div>
-          </Dropzone>
-
+          <label>
+            <Dropzone
+              onDrop={this.onImageDrop.bind(this)}
+              multiple={false}
+              accept="image/*">
+              <div>Drop an image or click here to upload a file</div>  
+            </Dropzone>
+          </label>
 
           <label>Description
             <ReactQuill
@@ -133,6 +143,7 @@ class ProjectUpdate extends React.Component {
   }
 }
 
+// <Preview file={this.state.file}/>
 
 
 export default ProjectUpdate;

@@ -2,6 +2,8 @@ class Api::ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+    cloud_name = ENV['CLOUD_NAME']
+    upload_preset = ENV['UPLOAD_PRESET']
   end
 
   def show

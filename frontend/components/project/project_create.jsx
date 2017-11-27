@@ -61,6 +61,7 @@ class ProjectCreate extends React.Component {
         <h1>Create a New Project</h1>
           {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
+
           <label>Title:
             <input
               type="text"
@@ -68,6 +69,7 @@ class ProjectCreate extends React.Component {
               onChange={this.handleInput('title')}
               />
           </label>
+
           <label>Category:
             <input
               type="text"
@@ -75,6 +77,7 @@ class ProjectCreate extends React.Component {
               onChange={this.handleInput('category')}
               />
           </label>
+
           <label>Image Link:
             <input
               type="text"
@@ -82,12 +85,14 @@ class ProjectCreate extends React.Component {
               onChange={this.handleInput('img_url')}
               />
           </label>
+          
           <label>Description
             <ReactQuill
               onChange={this.handleQuillInput}
               value={this.state.description}
               className='quill'/>
           </label>
+
           <input type="submit" value="Create Project" />
           <button onClick={this.navigateHome}>
             Cancel
