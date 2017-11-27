@@ -14,10 +14,6 @@ class ProjectCreate extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillMount() {
-    document.title = "Doable - Create";
-  }
-
   componentWillUnmount() {
     this.props.receiveProjectErrors([]);
   }
@@ -31,7 +27,7 @@ class ProjectCreate extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.createProject(this.state)
-      .then(this.props.history.push('/'));
+    .then(() => this.props.history.push('/'));
   }
 
   renderErrors() {
@@ -83,7 +79,7 @@ class ProjectCreate extends React.Component {
               width="320"
               ></textarea>
           </label>
-          <button>Create Your Project</button>
+          <input type="submit" value="Create Project" />
         </form>
       </div>
     );

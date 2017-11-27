@@ -11,6 +11,19 @@ class ProjectUpdate extends React.Component {
     this.props.receiveProjectErrors([]);
   }
 
+  componentDidMount() {
+    if (this.props.match.params.projectId) {
+      this.props.fetchProject(this.props.match.params.projectId);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.location.pathname !== this.props.location.pathname) {
+      this.props.fetchProject(nextProps.match.params.projectId);
+    }
+    this.setState(nextProps.project);
+  }
+
   handleInput(type) {
     return (event) => {
       this.setState({ [type]: event.target.value });
@@ -19,8 +32,8 @@ class ProjectUpdate extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.createProject(this.state)
-      .then(this.props.history.push('/'));
+    this.props.updateProject(this.state)
+      .then(() => this.props.history.push(`/projects/${this.props.project.id}`));
   }
 
   renderErrors() {
@@ -68,11 +81,11 @@ class ProjectUpdate extends React.Component {
               type="text"
               value={this.state.description}
               onChange={this.handleInput('description')}
-              height="480"
-              width="320"
+              rows="20"
+              cols="60"
               ></textarea>
           </label>
-          <button>Update Your Project</button>
+          <input type="submit" value="Update Your Project" />
         </form>
       </div>
     );

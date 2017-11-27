@@ -29,7 +29,7 @@ const App = () => (
       <ProtectedRoute path="/projects/:projectId/edit" component={ProjectUpdateContainer} />
       <ProtectedRoute path="/projects/:projectId" component={ProjectDetailContainer} />
     </Switch>
-
+  
     <SessionPage />
 
     <footer className='footer-nav'>

@@ -11,17 +11,23 @@ class ProjectIndex extends React.Component {
 
   render () {
     const { projects, loading } = this.props;
-    return (
-      loading ?
-      <LoadingIcon loading={loading}/> :
-      <div className="projects-index">
-        <ul>
-          {
-            projects.map(project => <ProjectIndexItem key={project.id} project={project} />)
-          }
-        </ul>
-      </div>
-    );
+
+    if (!projects) {
+      return (
+        <LoadingIcon loading={loading}/>
+      );
+    }
+    else {
+      return (
+        <div className="projects-index">
+          <ul>
+            {
+              projects.map(project => <ProjectIndexItem key={project.id} project={project} />)
+            }
+          </ul>
+        </div>
+      );
+    }
   }
 }
 

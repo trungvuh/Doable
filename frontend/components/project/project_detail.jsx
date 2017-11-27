@@ -14,13 +14,13 @@ class ProjectDetail extends React.Component {
     this.props.fetchProject(this.props.match.params.projectId);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.location.pathname !== this.props.location.pathname) {
-  //     this.props.fetchProject(nextProps.match.params.projectId);
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.location.pathname !== this.props.location.pathname) {
+      this.props.fetchProject(nextProps.match.params.projectId);
+    }
+  }
 
-  deleteButton() {
+  projectButton() {
     const currentUserId = this.props.currentUser.id;
     const creatorId = this.props.project.creator.id;
     const project = this.props.project;
@@ -32,23 +32,26 @@ class ProjectDetail extends React.Component {
     }
     else {
       return (
-        <button
-          onClick={() => this.props.deleteProject(project.id)
-            .then(() => this.props.history.push('/'))}>
-          Delete Project
-        </button>
+        <div>
+          <Link to={`/projects/${project.id}/edit`}>
+            <button>Edit Your Project</button>
+          </Link>
+          <button
+            onClick={() => this.props.deleteProject(project.id)
+              .then(() => this.props.history.push('/'))}>
+              Delete Project
+          </button>
+        </div>
       );
     }
   }
 
-  editButton() {
-    const projectId = this.props.match.params.projectId;
-    return (
-      <Link to={`/projects/${projectId}/edit`}>
-        <button>Edit Your Project</button>
-      </Link>
-    );
-  }
+  // editButton() {
+  //   const projectId = this.props.match.params.projectId;
+  //   return (
+  //
+  //   );
+  // }
 
   render() {
     const { project, loading } = this.props;
@@ -72,8 +75,8 @@ class ProjectDetail extends React.Component {
           <div className="project-description">
             {Parser(project.description)}
           </div>
-          {this.editButton()}
-          {this.deleteButton()}
+
+          {this.projectButton()}
         </div>
       );
     }

@@ -22,4 +22,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(ProjectUpdate);
+export default withRouter(connect(
+  mapStateToProps,
+  mapDispatchToProps)(ProjectUpdate));
