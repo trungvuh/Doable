@@ -40,7 +40,7 @@ class Api::ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
 
-    if @project
+    if @project.creator_id == current_user.id
       @project.destroy!
       render :index
     else

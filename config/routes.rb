@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :update]
     resource :session, only: [:create, :destroy]
     resources :projects, except: [:new, :edit]
+    resources :comments, except: [:new, :edit]
   end
 end
