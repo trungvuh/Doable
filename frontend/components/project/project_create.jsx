@@ -69,25 +69,40 @@ class ProjectCreate extends React.Component {
 
   render () {
     // console.log(this.props.currentUser);
+    const {loading} = this.props;
+    const modules = {
+      toolbar: [
+        [{ 'header': [1, 2, 3, 4, false] }],
+        ['bold', 'italic', 'underline','strike', 'blockquote'],
+        [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+        ['link', 'image', 'code-block'],
+        ['clean']
+      ],
+    };
+
     return (
+      loading ?
+      <LoadingIcon loading={true} /> :
       <div>
         <h1>Create a New Project</h1>
           {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
 
-          <label>Title:
+          <label>
             <input
               type="text"
               value={this.state.title}
               onChange={this.handleInput('title')}
+              placeholder="Add your Title"
               />
           </label>
 
-          <label>Category:
+          <label>
             <input
               type="text"
               value={this.state.category}
               onChange={this.handleInput('category')}
+              placeholder="Category"
               />
           </label>
 
@@ -95,10 +110,13 @@ class ProjectCreate extends React.Component {
           </button>
           <br/>
 
-          <label>Description
+          <label>
             <ReactQuill
               onChange={this.handleQuillInput}
               value={this.state.description}
+              theme="snow"
+              modules={modules}
+              placeholder="Compose your description here"
               className='quill'/>
           </label>
 

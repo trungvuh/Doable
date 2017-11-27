@@ -1,9 +1,11 @@
 import React from 'react';
-import Parser from 'html-react-parser';
-import LoadingIcon from '../util/loading_icon';
-import { Link } from 'react-router-dom';
+// import Parser from 'html-react-parser';
+import ReactHtmlParser from 'react-html-parser';
 
+import { Link } from 'react-router-dom';
 import { render } from 'react-dom';
+
+import LoadingIcon from '../util/loading_icon';
 
 class ProjectDetail extends React.Component {
   constructor(props) {
@@ -64,9 +66,9 @@ class ProjectDetail extends React.Component {
           <h1>{project.title}</h1>
           <div>Category: {project.category}</div>
           <div>Created by: {project.creator.name}</div>
-          <div className="project-description">
-            {Parser(project.description)}
-          </div>
+
+          <div dangerouslySetInnerHTML={{ __html: project.description }} />
+
 
           {this.projectButton()}
         </div>
@@ -74,5 +76,8 @@ class ProjectDetail extends React.Component {
     }
   }
 }
+// <div className="project-description">
+//   {ReactHtmlParser(project.description)}
+// </div>
 
 export default ProjectDetail;

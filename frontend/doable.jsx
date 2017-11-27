@@ -4,8 +4,6 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-// import { fetchProjects } from '../../actions/project_actions';
-// import { login, signup, logout } from './utils/session_api_util';
 import { createProject } from './actions/project_actions';
 
 document.addEventListener('DOMContentLoaded', () => {

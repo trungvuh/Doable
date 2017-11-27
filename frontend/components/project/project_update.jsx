@@ -5,14 +5,12 @@ import request from 'superagent';
 
 import LoadingIcon from '../util/loading_icon';
 
-const CLOUDINARY_UPLOAD_PRESET = 'trungvu';
-const CLOUDINARY_UPLOAD_URL = ' https://api.cloudinary.com/v1_1/trungvuh/image/upload';
-
 
 class ProjectUpdate extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.project;
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleQuillInput = this.handleQuillInput.bind(this);
     this.navigateToShow = this.navigateToShow.bind(this);
@@ -74,18 +72,18 @@ class ProjectUpdate extends React.Component {
     );
   }
 
-
-
-
   render () {
     const project = this.state;
     const modules = {
       toolbar: [
         [{ 'header': [1, 2, 3, 4, false] }],
-        ['bold', 'italic', 'underline','strike', 'blockquote'],
-        [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-        ['link', 'image', 'code-block'],
-        ['clean']
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        [{'list': 'ordered'}, {'list': 'bullet'}],
+        ['link', 'image', 'video'],
+        [{'size': ['small', 'medium', 'large', false]}],
+        [{'color': [] }, {'background': [] }],
+        [{'font': [] }],
+        [{'align': [] }]
       ],
     };
 
@@ -106,6 +104,7 @@ class ProjectUpdate extends React.Component {
                 type="text"
                 value={this.state.title}
                 onChange={this.handleInput('title')}
+                placeholder="Add your Title"
                 />
             </label>
 
@@ -114,6 +113,7 @@ class ProjectUpdate extends React.Component {
                 type="text"
                 value={this.state.category}
                 onChange={this.handleInput('category')}
+                placeholder="Category"
                 />
             </label>
 
@@ -121,15 +121,12 @@ class ProjectUpdate extends React.Component {
             </button>
             <br/>
 
-
-
-            <label>Description
+            <label>
               <ReactQuill
                 onChange={this.handleQuillInput}
                 value={this.state.description}
                 theme="snow"
                 modules={modules}
-
                 placeholder="Compose your description here"
                 className='quill'/>
             </label>
@@ -171,6 +168,8 @@ export default ProjectUpdate;
   // }
 
   // handleImageUpload(file) {
+  // const CLOUDINARY_UPLOAD_PRESET = 'trungvu';
+  // const CLOUDINARY_UPLOAD_URL = ' https://api.cloudinary.com/v1_1/trungvuh/image/upload';
   //   let upload = request.post(CLOUDINARY_UPLOAD_URL)
   //                    .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
   //                    .field('file', file);
