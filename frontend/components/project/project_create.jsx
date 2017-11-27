@@ -27,7 +27,7 @@ class ProjectCreate extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.createProject(this.state)
-    .then(() => this.props.history.push('/'));
+      .then(() => this.props.history.push('/'));
   }
 
   renderErrors() {

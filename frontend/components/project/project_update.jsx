@@ -1,10 +1,12 @@
 import React from 'react';
+import ReactQuill from 'react-quill';
 
 class ProjectUpdate extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.project;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleQuillInput = this.handleQuillInput.bind(this);
   }
 
   componentWillUnmount() {
@@ -13,15 +15,17 @@ class ProjectUpdate extends React.Component {
 
   componentDidMount() {
     if (this.props.match.params.projectId) {
-      this.props.fetchProject(this.props.match.params.projectId);
+      this.props.fetchProject(this.props.project.id);
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.location.pathname !== this.props.location.pathname) {
-      this.props.fetchProject(nextProps.match.params.projectId);
-    }
+    const { project } = this.props;
     this.setState(nextProps.project);
+  }
+
+  handleQuillInput(value) {
+    this.setState({ description: value });
   }
 
   handleInput(type) {
@@ -50,6 +54,7 @@ class ProjectUpdate extends React.Component {
 
   render () {
     // console.log(this.props.currentUser);
+    console.log(this.props);
     return (
       <div>
         <h1>Edit Project</h1>
@@ -76,15 +81,13 @@ class ProjectUpdate extends React.Component {
               onChange={this.handleInput('img_url')}
               />
           </label>
-          <label>Description:
-            <textarea
-              type="text"
-              value={this.state.description}
-              onChange={this.handleInput('description')}
-              rows="20"
-              cols="60"
-              ></textarea>
+
+          <label>Edit
+            <ReactQuill
+              onChange={this.handleQuillInput}
+              value={this.state.description}/>
           </label>
+
           <input type="submit" value="Update Your Project" />
         </form>
       </div>

@@ -46,16 +46,8 @@ class ProjectDetail extends React.Component {
     }
   }
 
-  // editButton() {
-  //   const projectId = this.props.match.params.projectId;
-  //   return (
-  //
-  //   );
-  // }
-
   render() {
     const { project, loading } = this.props;
-
     if (!project) {
       return (
         <LoadingIcon loading={loading}/>
