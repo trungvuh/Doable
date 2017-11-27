@@ -15,6 +15,7 @@ class ProjectCreate extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.navigateHome = this.navigateHome.bind(this);
   }
 
   componentWillUnmount() {
@@ -29,6 +30,10 @@ class ProjectCreate extends React.Component {
     return (event) => {
       this.setState({ [type]: event.target.value });
     };
+  }
+
+  navigateHome() {
+    this.props.history.push(`/`);
   }
 
   handleSubmit(event) {
@@ -84,6 +89,9 @@ class ProjectCreate extends React.Component {
               className='quill'/>
           </label>
           <input type="submit" value="Create Project" />
+          <button onClick={this.navigateHome}>
+            Cancel
+          </button>
         </form>
       </div>
     );

@@ -13,6 +13,7 @@ class ProjectUpdate extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleQuillInput = this.handleQuillInput.bind(this);
     this.onImageDrop = this.onImageDrop.bind(this);
+    this.navigateToShow = this.navigateToShow.bind(this);
   }
 
   componentWillUnmount() {
@@ -38,10 +39,14 @@ class ProjectUpdate extends React.Component {
     };
   }
 
+  navigateToShow() {
+    this.props.history.push(`/projects/${this.props.project.id}`);
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     this.props.updateProject(this.state)
-      .then(() => this.props.history.push(`/projects/${this.props.project.id}`));
+      .then(() => this.navigateToShow());
   }
 
   onImageDrop(files) {
@@ -123,6 +128,9 @@ class ProjectUpdate extends React.Component {
           </label>
 
           <input type="submit" value="Update Your Project" />
+          <button onClick={this.navigateToShow}>
+            Cancel
+          </button>
         </form>
       </div>
     );
