@@ -8,12 +8,6 @@ import LoadingIcon from '../util/loading_icon';
 const CLOUDINARY_UPLOAD_PRESET = 'trungvu';
 const CLOUDINARY_UPLOAD_URL = ' https://api.cloudinary.com/v1_1/trungvuh/image/upload';
 
-// const Preview = (props) => (
-// (props.file) ?
-//   <div>
-//     <img style={{width: '100px', height: '100px'}} src={props.file.preview}/>
-//   </div> : <div>Drop an image or click here to upload a file</div>
-// );
 
 class ProjectUpdate extends React.Component {
   constructor(props) {
@@ -69,28 +63,6 @@ class ProjectUpdate extends React.Component {
    }.bind(this));
   }
 
-  // onImageDrop(files) {
-  //   this.handleImageUpload(files[0]);
-  // }
-
-  // handleImageUpload(file) {
-  //   let upload = request.post(CLOUDINARY_UPLOAD_URL)
-  //                    .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
-  //                    .field('file', file);
-  //
-  //   upload.end((err, response) => {
-  //     if (err) {
-  //       console.error(err);
-  //     }
-  //
-  //     if (response.body.secure_url !== '') {
-  //       this.setState({
-  //         img_url: response.body.secure_url
-  //       });
-  //     }
-  //   });
-  // }
-
   renderErrors() {
     return (
       <ul>
@@ -103,8 +75,19 @@ class ProjectUpdate extends React.Component {
   }
 
 
+
+
   render () {
     const project = this.state;
+    const modules = {
+      toolbar: [
+        [{ 'header': [1, 2, 3, 4, false] }],
+        ['bold', 'italic', 'underline','strike', 'blockquote'],
+        [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+        ['link', 'image', 'code-block'],
+        ['clean']
+      ],
+    };
 
     if (!project) {
       return (
@@ -139,14 +122,17 @@ class ProjectUpdate extends React.Component {
             <br/>
 
 
+
             <label>Description
               <ReactQuill
                 onChange={this.handleQuillInput}
                 value={this.state.description}
+                theme="snow"
+                modules={modules}
+
+                placeholder="Compose your description here"
                 className='quill'/>
             </label>
-
-
 
             <input type="submit" value="Update Your Project" />
             <button onClick={this.navigateToShow}>
@@ -159,6 +145,8 @@ class ProjectUpdate extends React.Component {
   }
 }
 
+export default ProjectUpdate;
+
 // <Preview file={this.state.file}/>
 
 // <label>
@@ -170,5 +158,32 @@ class ProjectUpdate extends React.Component {
 //   </Dropzone>
 // </label>
 
+// const Preview = (props) => (
+// (props.file) ?
+//   <div>
+//     <img style={{width: '100px', height: '100px'}} src={props.file.preview}/>
+//   </div> : <div>Drop an image or click here to upload a file</div>
+// );
 
-export default ProjectUpdate;
+
+  // onImageDrop(files) {
+  //   this.handleImageUpload(files[0]);
+  // }
+
+  // handleImageUpload(file) {
+  //   let upload = request.post(CLOUDINARY_UPLOAD_URL)
+  //                    .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+  //                    .field('file', file);
+  //
+  //   upload.end((err, response) => {
+  //     if (err) {
+  //       console.error(err);
+  //     }
+  //
+  //     if (response.body.secure_url !== '') {
+  //       this.setState({
+  //         img_url: response.body.secure_url
+  //       });
+  //     }
+  //   });
+  // }
