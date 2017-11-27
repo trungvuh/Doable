@@ -67,8 +67,9 @@ class ProjectDetail extends React.Component {
           <div>Category: {project.category}</div>
           <div>Created by: {project.creator.name}</div>
 
-          <div dangerouslySetInnerHTML={{ __html: project.description }} />
-
+          <div className="project-description">
+            {ReactHtmlParser(project.description)}
+          </div>
 
           {this.projectButton()}
         </div>
@@ -76,8 +77,9 @@ class ProjectDetail extends React.Component {
     }
   }
 }
-// <div className="project-description">
-//   {ReactHtmlParser(project.description)}
-// </div>
+
+
+// <div dangerouslySetInnerHTML={{ __html: project.description }} />
+
 
 export default ProjectDetail;

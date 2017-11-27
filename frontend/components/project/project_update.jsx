@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
-import Dropzone from 'react-dropzone';
+// import Dropzone from 'react-dropzone';
 import request from 'superagent';
 
 import LoadingIcon from '../util/loading_icon';
