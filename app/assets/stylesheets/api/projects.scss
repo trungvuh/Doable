@@ -64,7 +64,7 @@
 .project-detail h1 {
   font-size: 2em;
   font-weight: bold;
-  margin: 5%
+  margin: 5%;
 }
 
 .detail-label {
@@ -167,6 +167,17 @@
 
 .quill {
   font-size: 20px;
+}
+
+.quill iframe {
+  width: 40%;
+  height: 30%;
+}
+
+.quill img {
+  max-width: 40%;
+  max-height: 30%;
+  border-radius: 5px;
 }
 
 
