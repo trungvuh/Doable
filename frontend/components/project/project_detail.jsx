@@ -130,14 +130,17 @@ class ProjectDetail extends React.Component {
               onAfterOpen={this.afterOpenModal}
               onRequestClose={this.closeModal}
               style={customStyles}
-              contentLabel="Example Modal">
+              contentLabel="Example Modal"
+              id="modal">
 
               <h2>Confirm Deletion?</h2>
-              <button onClick={() => this.props.deleteProject(project.id)
-                .then(() => this.props.history.push('/'))}>
-                Delete
-              </button>
-              <button onClick={this.closeModal}>Cancel</button>
+              <div>
+                <button onClick={() => this.props.deleteProject(project.id)
+                  .then(() => this.props.history.push('/'))}>
+                  Delete
+                </button>
+                <button onClick={this.closeModal}>Cancel</button>
+              </div>
             </Modal>
           </div>
         </div>

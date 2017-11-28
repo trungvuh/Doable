@@ -11,8 +11,9 @@ class LoadingIcon extends React.Component {
     return (
       <div className="loading-icon">
         <RingLoader
-          size={50}
-          color={"#36d7b7"} />
+          size={100}
+          color={"#36d7b7"}
+        />
         </div>
     );
   }

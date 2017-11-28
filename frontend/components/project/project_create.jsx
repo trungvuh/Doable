@@ -86,12 +86,12 @@ class ProjectCreate extends React.Component {
     return (
       loading ?
       <LoadingIcon loading={true} /> :
-      <div>
+      <div className="project-detail">
         <h1>Create a New Project</h1>
           {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
 
-          <label>
+          <label className="detail-label">Title:
             <input
               type="text"
               value={this.state.title}
@@ -100,7 +100,7 @@ class ProjectCreate extends React.Component {
               />
           </label>
 
-          <label>
+          <label className="detail-label">Category:
             <input
               type="text"
               value={this.state.category}

@@ -111,6 +111,25 @@
   border: none;
 }
 
+.ReactModal__Content {
+  font-size: 1em;
+}
+
+.ReactModalPortal div {
+
+}
+
+.ReactModalPortal button {
+  cursor: pointer;
+  margin: 5px;
+}
+
+.ReactModalPortal button:hover{
+  background: $gray-ins;
+  color: $white;
+
+}
+
 /////project-form////
 
 
