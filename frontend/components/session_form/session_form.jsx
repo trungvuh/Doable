@@ -14,10 +14,6 @@ class SessionForm extends React.Component {
     this.demoLogin = this.demoLogin.bind(this);
   }
 
-  componentWillMount() {
-    document.title = "Doable - Login";
-  }
-
   componentWillUnmount() {
     this.props.receiveSessionErrors([]);
   }
