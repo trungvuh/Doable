@@ -65,7 +65,7 @@
 }
 
 .nav-proj-btn {
-  width: 130px;
+  width: 150px;
   height: 35px;
   border-radius: 2px;
   border: 1px solid $lightest-gray;
@@ -85,6 +85,12 @@
   font-size: 15px;
   margin-left: 15px;
   cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: $blue-ins;
+  color: $white;
+  border: none;
 }
 
 .welcome {

@@ -64,7 +64,7 @@ class ProjectDetail extends React.Component {
     }
     else {
       return (
-        <div>
+        <div className='project-button'>
           <Link to={`/projects/${project.id}/edit`}>
             <button>Edit Your Project</button>
           </Link>
@@ -77,8 +77,29 @@ class ProjectDetail extends React.Component {
     }
   }
 
+  displayModal() {
+    var img = document.getElementsByTagName('img');
+    var modal = document.getElementsByClassName('modal');
+    var modalImg = document.getElementById('img01');
+    console.log(img);
+    console.log(modal);
+    console.log(modalImg);
+    img.onClick = () => {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+    };
+
+    return (
+      <div id="myModal" className="modal">
+        <span className="close">×</span>
+        <img className="modal-content" id="img01"/>
+      </div>
+    );
+  }
+
   render() {
     const { project, loading } = this.props;
+
     if (!project) {
       return (
         <LoadingIcon loading={loading}/>
@@ -93,11 +114,12 @@ class ProjectDetail extends React.Component {
             width = "600px"
             className="project-detail-img" />
           <h1>{project.title}</h1>
-          <div>Category: {project.category}</div>
-          <div>Created by: {project.creator.name}</div>
+          <div className="detail-category"><u>Category:</u> {project.category}</div>
+          <div className="detail-creator"><u>Created by:</u> {project.creator.name}</div>
 
           <div className="project-description">
             {ReactHtmlParser(project.description)}
+            {this.displayModal()}
           </div>
 
           {this.projectButton()}

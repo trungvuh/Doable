@@ -24,6 +24,11 @@
 @import 'navbar/navbar';
 @import 'api/sessions';
 
+//api
+@import 'api/comments';
+@import 'api/sessions'; 
+@import 'api/projects';
+
 body {
   font-family: $helvetica;
   background: $blue-ins;

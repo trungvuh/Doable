@@ -12,7 +12,7 @@ const Header = () => (
       <div className="app-punch-line">Even a Baby Can Do It</div>
 
       <Link to='/projects/new'>
-        <button className="nav-proj-btn">Create Project</button>
+        <button className="nav-proj-btn">Create a Project</button>
       </Link>
       <GreetingContainer  />
     </div>

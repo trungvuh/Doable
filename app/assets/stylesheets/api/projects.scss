@@ -4,11 +4,13 @@
 @import '../base/font';
 @import '../base/color';
 
+
+///project index/////
 .projects-index ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 1800px;
+  // max-width: 1800px;
 }
 
 .project-index-item {
@@ -17,10 +19,15 @@
   justify-content: flex-start;
   margin: 30px 15px;
   border: 1px solid $gray;
-  // padding: 10px;
+  border-radius: 5px;
   background: $pearl-white;
-  max-width: 325px;
-  height: 375px;
+  max-width: 300px;
+  height: 350px;
+
+}
+
+.project-index-item img:hover {
+  opacity: 0.7;
 }
 
 .project-index-item-text {
@@ -40,4 +47,102 @@
   font-size: 1.2em;
   font-family: $helvetica;
   color: black;
+}
+
+/////project detail///////
+
+.project-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80%;
+  margin: 4% 10%;
+  font-size: 1.1em;
+  font-family: $helvetica;
+}
+
+.project-detail h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 5%
+}
+
+.detail-category {
+  font-size: 1.3em;
+  color: $gray;
+  margin-bottom: 2%;
+}
+
+.detail-creator {
+  font-size: 1.3em;
+  color: $gray;
+  margin-bottom: 2%;
+}
+
+.project-description li {
+  list-style-type: circle;
+  margin: 0.5em 4em;
+}
+
+.project-description iframe {
+  width: 40%;
+  height: 30%;
+}
+
+.project-description img {
+  max-width: 40%;
+  max-height: 30%;
+  border-radius: 5px;
+}
+
+.project-button {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin-top: 4%;
+}
+
+.project-button button {
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  // margin-left: 15px;
+  cursor: pointer;
+}
+
+.project-button button:hover {
+  background: $gray-ins;
+  color: $white;
+  border: none;
+}
+
+/////testing modal - not working yet/////
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
 }
