@@ -76,14 +76,14 @@ class ProjectUpdate extends React.Component {
     const project = this.state;
     const modules = {
       toolbar: [
-        [{ 'header': [1, 2, 3, 4, false] }],
-        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+        // [{ 'header': [1, 2, false] }],
+        ['bold', 'italic', 'underline', 'strike'],
         [{'list': 'ordered'}, {'list': 'bullet'}],
         ['link', 'image', 'video'],
-        [{'size': ['small', 'medium', 'large', false]}],
+        // [{'size': ['small', 'medium', 'large', false]}],
         [{'color': [] }, {'background': [] }],
-        [{'font': [] }],
-        [{'align': [] }]
+        // [{'font': [] }],
+        // [{'align': [] }]
       ],
     };
 
@@ -93,6 +93,7 @@ class ProjectUpdate extends React.Component {
       );
     }
     else {
+      console.log(this.state);
       return (
         <div>
           <h1>Edit Project</h1>

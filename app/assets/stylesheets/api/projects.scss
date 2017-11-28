@@ -1,3 +1,42 @@
 // Place all the styles related to the Api::Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import '../base/font';
+@import '../base/color';
+
+.projects-index ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1800px;
+}
+
+.project-index-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 30px 10px;
+  border: 1px solid $gray;
+  // padding: 10px;
+  background: $pearl-white;
+  max-width: 300px;
+  height: 400px;
+}
+
+.project-index-item-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-index-item-text span {
+  margin-top: 10px;
+  padding: 0 10px;
+  color: $gray-ins;
+}
+
+#item-title {
+  font-weight: bold;
+  font-size: 15px;
+  font-family: $helvetica;
+  color: black;
+}

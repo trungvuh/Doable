@@ -72,11 +72,14 @@ class ProjectCreate extends React.Component {
     const {loading} = this.props;
     const modules = {
       toolbar: [
-        [{ 'header': [1, 2, 3, 4, false] }],
-        ['bold', 'italic', 'underline','strike', 'blockquote'],
-        [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-        ['link', 'image', 'code-block'],
-        ['clean']
+        // [{ 'header': [1, 2, 3, 4, false] }],
+        ['bold', 'italic', 'underline', 'strike'],
+        // [{'list': 'ordered'}, {'list': 'bullet'}],
+        ['link', 'image', 'video'],
+        // [{'size': ['small', 'medium', 'large', false]}],
+        [{'color': [] }, {'background': [] }],
+        // [{'font': [] }],
+        // [{'align': [] }]
       ],
     };
 

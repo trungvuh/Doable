@@ -12,9 +12,10 @@ export default ({project}) => {
           width = "300px"
           className="project-index-img" />
       </Link>
-
-      <span>{project.title}</span>
-      <span>by {project.creator.name} in {project.category}</span>
+      <div className="project-index-item-text">
+        <span id="item-title">{project.title}</span>
+        <span>by {project.creator.name} in {project.category}</span>
+      </div>
     </li>
   );
 };
