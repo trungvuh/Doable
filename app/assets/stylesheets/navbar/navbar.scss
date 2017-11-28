@@ -4,17 +4,18 @@
 .header-nav {
   width: 100%;
   height: 80px;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-bar {
   color: $dark-gray;
   display: flex;
   justify-content: space-between;
-  width: inherit;
+  width: 100%;
   height: inherit;
-  // margin: 10px;
   background: $light-gray;
-  border-bottom: 1px solid $lightest-gray;
+  border-bottom: 0.5px solid $lightest-gray;
 }
 
 .appname {
@@ -24,6 +25,7 @@
   font-weight: 550;
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 .appname:visited {
@@ -51,7 +53,6 @@
 
 .btn {
   text-decoration: none;
-  cursor: pointer;
   color: inherit;
 }
 
@@ -63,12 +64,27 @@
   color: inherit;
 }
 
+.nav-proj-btn {
+  width: 130px;
+  height: 35px;
+  border-radius: 2px;
+  border: 1px solid $lightest-gray;
+  background: transparent;
+  font-size: 1em;
+  cursor: pointer;
+  position: absolute;
+  left: 300px;
+  top: 45px;
+}
+
+
 .logout-btn {
   width: 80px;
   height: 30px;
   border-radius: 5px;
   font-size: 15px;
   margin-left: 15px;
+  cursor: pointer;
 }
 
 .welcome {

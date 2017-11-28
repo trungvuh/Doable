@@ -3,33 +3,24 @@ import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 
-import Logo from './util/logo';
+import Header from './util/header';
 import Footer from './util/footer';
 import HomePage from './util/homepage';
+import ProjectPage from './project/project_page';
 
-import ProjectDetailContainer from './project/project_detail_container';
-import ProjectCreateContainer from './project/project_create_container';
-import ProjectUpdateContainer from './project/project_update_container';
 
 import SessionPage from './session_form/session_page';
 
 const App = () => (
   <div className="whole-page">
-    <header className="header-nav">
-      <Logo />
-    </header>
+    <Header />
 
     <Switch>
       <Route exact path='/' component={HomePage} />
       <Route exact path='/projects' component={HomePage} />
     </Switch>
 
-    <Switch>
-      <ProtectedRoute path="/projects/new" component={ProjectCreateContainer} />
-      <ProtectedRoute path="/projects/:projectId/edit" component={ProjectUpdateContainer} />
-      <ProtectedRoute path="/projects/:projectId" component={ProjectDetailContainer} />
-    </Switch>
-  
+    <ProjectPage />
     <SessionPage />
 
     <footer className='footer-nav'>
