@@ -108,7 +108,7 @@ class ProjectUpdate extends React.Component {
                 placeholder="Add your Title"
                 />
             </label>
-          <br/>
+
             <label className="detail-label">Category:
               <input
                 type="text"

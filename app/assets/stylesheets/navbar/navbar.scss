@@ -77,6 +77,10 @@
   top: 45px;
 }
 
+.nav-proj-btn:hover {
+  background: $lightest-gray;
+}
+
 
 .logout-btn {
   width: 80px;
@@ -88,9 +92,7 @@
 }
 
 .logout-btn:hover {
-  background: $blue-ins;
-  color: $white;
-  border: none;
+  background: $lightest-gray;
 }
 
 .welcome {

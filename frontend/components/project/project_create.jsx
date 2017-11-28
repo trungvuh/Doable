@@ -109,24 +109,37 @@ class ProjectCreate extends React.Component {
               />
           </label>
 
-          <button onClick={this.handleUpload}>Upload Project Picture
-          </button>
+          <br/>
+          <label className="detail-label">Project Picture:
+            <button onClick={this.handleUpload}
+              className="upload-btn">Upload Project Picture
+            </button>
+          </label>
           <br/>
 
-          <label>
+          <span className="detail-label"
+            id="descript">Description:</span>
+
+          <br/><br/>
+          <div className='quill'>
             <ReactQuill
               onChange={this.handleQuillInput}
               value={this.state.description}
               theme="snow"
               modules={modules}
               placeholder="Compose your description here"
-              className='quill'/>
-          </label>
+            />
+          </div>
+          <div className='project-form-button'>
+            <input type="submit" value="Create Project"
+              className='prj-fm-btn' />
+            <button
+              onClick={this.navigateHome}
+              className='prj-fm-btn'>
+              Cancel
+            </button>
+          </div>
 
-          <input type="submit" value="Create Project" />
-          <button onClick={this.navigateHome}>
-            Cancel
-          </button>
         </form>
       </div>
     );
