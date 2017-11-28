@@ -102,7 +102,7 @@ class ProjectDetail extends React.Component {
 
           {this.projectButton()}
 
-          <div>
+          <div className="modal-deletion">
             <Modal
               isOpen={this.state.modalIsOpen}
               onAfterOpen={this.afterOpenModal}
