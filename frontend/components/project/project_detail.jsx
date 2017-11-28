@@ -1,15 +1,45 @@
 import React from 'react';
-import Parser from 'html-react-parser';
 import ReactHtmlParser from 'react-html-parser';
+import Modal from 'react-modal';
 
 import { Link } from 'react-router-dom';
 import { render } from 'react-dom';
 
 import LoadingIcon from '../util/loading_icon';
 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
 class ProjectDetail extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      modalIsOpen: false
+    };
+    this.openModal = this.openModal.bind(this);
+    this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    // this.subtitle.style.color = '#f00';
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
   }
 
   componentDidMount() {
@@ -39,8 +69,7 @@ class ProjectDetail extends React.Component {
             <button>Edit Your Project</button>
           </Link>
           <button
-            onClick={() => this.props.deleteProject(project.id)
-              .then(() => this.props.history.push('/'))}>
+            onClick={this.openModal}>
               Delete Project
           </button>
         </div>
@@ -72,6 +101,23 @@ class ProjectDetail extends React.Component {
           </div>
 
           {this.projectButton()}
+
+          <div>
+            <Modal
+              isOpen={this.state.modalIsOpen}
+              onAfterOpen={this.afterOpenModal}
+              onRequestClose={this.closeModal}
+              style={customStyles}
+              contentLabel="Example Modal">
+
+              <h2>Confirm Deletion?</h2>
+              <button onClick={() => this.props.deleteProject(project.id)
+                .then(() => this.props.history.push('/'))}>
+                Delete
+              </button>
+              <button onClick={this.closeModal}>Cancel</button>
+            </Modal>
+          </div>
         </div>
       );
     }
