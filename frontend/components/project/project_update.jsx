@@ -93,14 +93,14 @@ class ProjectUpdate extends React.Component {
       );
     }
     else {
-      console.log(this.state);
       return (
-        <div>
+        <div className="project-detail">
           <h1>Edit Project</h1>
             {this.renderErrors()}
-          <form onSubmit={this.handleSubmit}>
+          <form
+            onSubmit={this.handleSubmit}>
 
-            <label>Title:
+            <label className="detail-label">Title:
               <input
                 type="text"
                 value={this.state.title}
@@ -108,8 +108,8 @@ class ProjectUpdate extends React.Component {
                 placeholder="Add your Title"
                 />
             </label>
-
-            <label>Category:
+          <br/>
+            <label className="detail-label">Category:
               <input
                 type="text"
                 value={this.state.category}
@@ -117,25 +117,35 @@ class ProjectUpdate extends React.Component {
                 placeholder="Category"
                 />
             </label>
-
-            <button onClick={this.handleUpload}>Edit Project Picture
-            </button>
+            <br/>
+            <label className="detail-label">Project Picture:
+              <button onClick={this.handleUpload}
+              className="upload-btn">Edit Project Picture
+              </button>
+            </label>
             <br/>
 
-            <label>
-              <ReactQuill
-                onChange={this.handleQuillInput}
-                value={this.state.description}
-                theme="snow"
-                modules={modules}
-                placeholder="Compose your description here"
-                className='quill'/>
-            </label>
-
-            <input type="submit" value="Update Your Project" />
-            <button onClick={this.navigateToShow}>
-              Cancel
-            </button>
+            <span className="detail-label"
+              id="descript">Description:</span>
+              <br/><br/>
+              <div className='quill'>
+                <ReactQuill
+                  onChange={this.handleQuillInput}
+                  value={this.state.description}
+                  theme="snow"
+                  modules={modules}
+                  placeholder="Compose your description here"
+                  />
+              </div>
+            <div className='project-form-button'>
+              <input type="submit" value="Update Project"
+                className='prj-fm-btn' />
+              <button
+                onClick={this.navigateToShow}
+                className='prj-fm-btn'>
+                Cancel
+              </button>
+            </div>
           </form>
         </div>
       );

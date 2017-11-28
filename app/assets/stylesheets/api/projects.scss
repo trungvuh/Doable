@@ -67,13 +67,7 @@
   margin: 5%
 }
 
-.detail-category {
-  font-size: 1.3em;
-  color: $gray;
-  margin-bottom: 2%;
-}
-
-.detail-creator {
+.detail-label {
   font-size: 1.3em;
   color: $gray;
   margin-bottom: 2%;
@@ -102,7 +96,7 @@
   margin-top: 4%;
 }
 
-.project-button button {
+.prj-btn {
   width: 150px;
   height: 30px;
   border-radius: 5px;
@@ -111,11 +105,70 @@
   cursor: pointer;
 }
 
-.project-button button:hover {
+.prj-btn:hover {
   background: $gray-ins;
   color: $white;
   border: none;
 }
+
+/////project-form////
+
+
+.project-form-button {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin-top: 4%;
+  margin-left: 27%;
+}
+
+.prj-fm-btn {
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  // margin-left: 15px;
+  cursor: pointer;
+}
+
+.prj-fm-btn:hover {
+  background: $gray-ins;
+  color: $white;
+  border: none;
+}
+
+.detail-label input {
+  width: 300px;
+  padding: 5px;
+  margin: 1%;
+  font-size: 0.9em;
+  border-radius: 4px;
+}
+
+.upload-btn {
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  margin: 1%;
+  margin-bottom: 2%;
+  cursor: pointer;
+}
+
+.upload-btn:hover {
+  background: $gray-ins;
+  color: $white;
+  border: none;
+}
+
+#descript {
+  margin-bottom: 5px;
+}
+
+.quill {
+  font-size: 20px;
+}
+
 
 /////testing modal - not working yet/////
 .modal {
