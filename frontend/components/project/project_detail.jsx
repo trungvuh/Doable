@@ -36,8 +36,7 @@ class ProjectDetail extends React.Component {
   }
 
   afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    // this.subtitle.style.color = '#f00';
+
   }
 
   closeModal() {
@@ -46,6 +45,7 @@ class ProjectDetail extends React.Component {
 
   componentDidMount() {
     this.props.fetchProject(this.props.match.params.projectId);
+    // this.props.fetchComments();
     window.scrollTo(0,0);
   }
 
@@ -95,10 +95,10 @@ class ProjectDetail extends React.Component {
           <ul>
             {
               comments.map( (comment) => <CommentShow
-              key={comment.id}
-              body={comment.body}
-              author={comment.author.name}
-              created={comment.created_at}/>)
+                key={comment.id}
+                body={comment.body}
+                author={comment.author.name}
+                created={comment.created_at}/>)
             }
           </ul>
         </div>
@@ -109,6 +109,7 @@ class ProjectDetail extends React.Component {
 
   render() {
     const { project, loading } = this.props;
+    console.log(this.props);
     if (!project) {
       return (
         <LoadingIcon loading={loading}/>

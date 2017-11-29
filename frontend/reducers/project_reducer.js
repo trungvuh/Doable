@@ -27,7 +27,7 @@ const projectReducer = (state = {}, action) => {
     case RECEIVE_COMMENT:
      const comment = action.comment;
      const project = nextState[comment.project_id];
-     project.commentIds.push(comment.id);
+     project.comments.push(comment);
      return nextState;
 
     default:

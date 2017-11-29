@@ -16,9 +16,9 @@ class Api::CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.author_id = current_user.id
-
+    @project = Project.find(@comment.project_id)
     if @comment.save
-      render '/api/projects/show'
+      render 'api/comments/show'
     else
       render json: @comment.errors.full_messages, status: 422
     end

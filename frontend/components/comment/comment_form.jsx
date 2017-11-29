@@ -9,21 +9,20 @@ class CommentForm extends React.Component {
       body: '',
       author_id: this.props.currentUser.id,
       project_id: this.props.match.params.projectId,
-      modalIsOpen: false
     };
 
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    // this.openModal = this.openModal.bind(this);
+    // this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  openModal() {
-    this.setState({ modalIsOpen: false });
-  }
-
-  closeModal() {
-    this.setState({ modalIsOpen: true });
-  }
+  //
+  // openModal() {
+  //   this.setState({ modalIsOpen: false });
+  // }
+  //
+  // closeModal() {
+  //   this.setState({ modalIsOpen: true });
+  // }
 
   update(property){
     return event => {
