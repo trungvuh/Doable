@@ -56,7 +56,8 @@ class ProjectUpdate extends React.Component {
     cloudinary.openUploadWidget(window.cloudinary_options, function(error, results){
      if(!error){
        this.setState({
-         img_url: results[0].secure_url
+         img_url: results[0].secure_url,
+         msg: 'Upload Successful!'
        });
      }
    }.bind(this));
@@ -77,14 +78,10 @@ class ProjectUpdate extends React.Component {
     const project = this.state;
     const modules = {
       toolbar: [
-        // [{ 'header': [1, 2, false] }],
         ['bold', 'italic', 'underline', 'strike'],
         [{'list': 'ordered'}, {'list': 'bullet'}],
         ['link', 'image', 'video'],
-        // [{'size': ['small', 'medium', 'large', false]}],
         [{'color': [] }, {'background': [] }],
-        // [{'font': [] }],
-        // [{'align': [] }]
       ],
     };
 
@@ -123,8 +120,10 @@ class ProjectUpdate extends React.Component {
               <button onClick={this.handleUpload}
               className="upload-btn">Edit Project Picture
               </button>
+              <div className="success-msg">
+                {this.state.msg}
+              </div>
             </label>
-            <br/>
 
             <span className="detail-label"
               id="descript">Description:</span>

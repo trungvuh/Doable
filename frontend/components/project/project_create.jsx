@@ -11,7 +11,8 @@ class ProjectCreate extends React.Component {
       description: "",
       category: "",
       img_url: "",
-      creator_id: this.props.currentUser.id
+      creator_id: this.props.currentUser.id,
+      msg: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -44,12 +45,19 @@ class ProjectCreate extends React.Component {
       .then((project) => this.props.history.push(`/projects/${project.id}`));
   }
 
+  displayMessage(message) {
+    return (
+      <div>{message}</div>
+    );
+  }
+
   handleUpload(event) {
     event.preventDefault();
     cloudinary.openUploadWidget(window.cloudinary_options, function(error, results){
      if(!error){
        this.setState({
-         img_url: results[0].url
+         img_url: results[0].url,
+         msg: 'Upload Successful!'
        });
      }
    }.bind(this));
@@ -66,20 +74,14 @@ class ProjectCreate extends React.Component {
     );
   }
 
-
   render () {
-    // console.log(this.props.currentUser);
     const {loading} = this.props;
     const modules = {
       toolbar: [
-        // [{ 'header': [1, 2, 3, 4, false] }],
         ['bold', 'italic', 'underline', 'strike'],
-        // [{'list': 'ordered'}, {'list': 'bullet'}],
+        [{'list': 'ordered'}, {'list': 'bullet'}],
         ['link', 'image', 'video'],
-        // [{'size': ['small', 'medium', 'large', false]}],
         [{'color': [] }, {'background': [] }],
-        // [{'font': [] }],
-        // [{'align': [] }]
       ],
     };
 
@@ -114,8 +116,10 @@ class ProjectCreate extends React.Component {
             <button onClick={this.handleUpload}
               className="upload-btn">Upload Project Picture
             </button>
+            <div className="success-msg">
+              {this.state.msg}
+            </div>
           </label>
-          <br/>
 
           <span className="detail-label"
             id="descript">Description:</span>

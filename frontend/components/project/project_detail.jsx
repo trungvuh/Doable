@@ -109,7 +109,6 @@ class ProjectDetail extends React.Component {
 
   render() {
     const { project, loading } = this.props;
-    console.log(project);
     if (!project) {
       return (
         <LoadingIcon loading={loading}/>
@@ -134,22 +133,25 @@ class ProjectDetail extends React.Component {
 
           {this.projectButton()}
 
-          <div className="modal-deletion">
+          <div className='modal-deletion'>
             <Modal
               isOpen={this.state.modalIsOpen}
               onAfterOpen={this.afterOpenModal}
               onRequestClose={this.closeModal}
               style={customStyles}
               contentLabel="Example Modal"
-              id="modal">
+            >
 
               <h2>Confirm Deletion?</h2>
               <div>
-                <button onClick={() => this.props.deleteProject(project.id)
+                <button
+                  className='prj-fm-btn'
+                   onClick={() => this.props.deleteProject(project.id)
                   .then(() => this.props.history.push('/'))}>
                   Delete
                 </button>
-                <button onClick={this.closeModal}>Cancel</button>
+                <button
+                  className='prj-fm-btn' onClick={this.closeModal}>Cancel</button>
               </div>
             </Modal>
           </div>
