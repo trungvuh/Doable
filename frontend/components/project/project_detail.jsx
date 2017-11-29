@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { render } from 'react-dom';
 
 import LoadingIcon from '../util/loading_icon';
+import CommentFormContainer from '../comment/comment_form_container';
+import CommentShow from '../comment/comment_show';
 
 const customStyles = {
   content : {
@@ -79,29 +81,27 @@ class ProjectDetail extends React.Component {
     }
   }
 
-  // displayModal() {
-  //   var img = document.getElementsByTagName('img');
-  //   var modal = document.getElementsByClassName('modal');
-  //   var modalImg = document.getElementById('img01');
-  //   console.log(img);
-  //   console.log(modal);
-  //   console.log(modalImg);
-  //   img.onClick = () => {
-  //     modal.style.display = "block";
-  //     modalImg.src = this.src;
-  //   };
-  //
-  //   return (
-  //     <div id="myModal" className="modal">
-  //       <span className="close">×</span>
-  //       <img className="modal-content" id="img01"/>
-  //     </div>
-  //   );
-  // }
+  showComment() {
+    const { project } = this.props;
+    return (
+      <div>
+        <ul>
+          {
+            project.comments.map( (comment) => <CommentShow
+              key={comment.id}
+              body={comment.body}
+              author={comment.author.name}
+              created={comment.created_at}/>)
+          }
+        </ul>
+      </div>
+    );
+  }
+
 
   render() {
     const { project, loading } = this.props;
-
+    console.log(project);
     if (!project) {
       return (
         <LoadingIcon loading={loading}/>
@@ -120,6 +120,9 @@ class ProjectDetail extends React.Component {
           <div className="project-description">
             {ReactHtmlParser(project.description)}
           </div>
+          <CommentFormContainer
+            projectId={this.props.projectId}/>
+          {this.showComment()}
 
           {this.projectButton()}
 
@@ -148,8 +151,26 @@ class ProjectDetail extends React.Component {
   }
 }
 
+export default ProjectDetail;
+
+// displayModal() {
+//   var img = document.getElementsByTagName('img');
+//   var modal = document.getElementsByClassName('modal');
+//   var modalImg = document.getElementById('img01');
+//   console.log(img);
+//   console.log(modal);
+//   console.log(modalImg);
+//   img.onClick = () => {
+//     modal.style.display = "block";
+//     modalImg.src = this.src;
+//   };
+//
+//   return (
+//     <div id="myModal" className="modal">
+//       <span className="close">×</span>
+//       <img className="modal-content" id="img01"/>
+//     </div>
+//   );
+// }
 
 // <div dangerouslySetInnerHTML={{ __html: project.description }} />
-
-
-export default ProjectDetail;

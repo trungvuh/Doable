@@ -3,6 +3,9 @@ import {
   RECEIVE_PROJECT,
   REMOVE_PROJECT,
 } from '../actions/project_actions';
+import {
+  RECEIVE_COMMENT
+} from '../actions/comment_action';
 
 import merge from 'lodash/merge';
 
@@ -20,6 +23,12 @@ const projectReducer = (state = {}, action) => {
     case REMOVE_PROJECT:
       delete nextState[action.projectId];
       return nextState;
+
+    case RECEIVE_COMMENT:
+     const comment = action.comment;
+     const project = nextState[comment.project_id];
+     project.commentIds.push(comment.id);
+     return nextState;
 
     default:
       return state;
