@@ -23,6 +23,7 @@ class ProjectUpdate extends React.Component {
 
   componentDidMount() {
     this.props.fetchProject(this.props.match.params.projectId);
+    window.scrollTo(0,0);
   }
 
   componentWillReceiveProps(nextProps) {

@@ -14,7 +14,7 @@ class ProjectIndex extends React.Component {
 
     if (!projects) {
       return (
-        <LoadingIcon loading={loading}/>
+        <LoadingIcon loading={true}/>
       );
     }
     else {
@@ -22,7 +22,8 @@ class ProjectIndex extends React.Component {
         <div className="projects-index">
           <ul>
             {
-              projects.map(project => <ProjectIndexItem key={project.id} project={project} />)
+              projects.map(project => <ProjectIndexItem key={project.id} project={project}
+               />)
             }
           </ul>
         </div>

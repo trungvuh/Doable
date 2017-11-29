@@ -3,10 +3,12 @@ import {
   RECEIVE_PROJECT,
   REMOVE_PROJECT,
 } from '../actions/project_actions';
+
 import merge from 'lodash/merge';
 
 const projectReducer = (state = {}, action) => {
   Object.freeze(state);
+  let nextState = merge({}, state);
 
   switch (action.type) {
     case RECEIVE_PROJECTS:
@@ -16,7 +18,6 @@ const projectReducer = (state = {}, action) => {
       return merge({}, state, {[action.project.id]: action.project});
 
     case REMOVE_PROJECT:
-      let nextState = merge({}, state);
       delete nextState[action.projectId];
       return nextState;
 

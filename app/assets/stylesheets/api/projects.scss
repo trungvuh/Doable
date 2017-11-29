@@ -62,6 +62,11 @@
   font-family: $helvetica;
 }
 
+.project-detail-img {
+  max-width: 800px;
+  max-height: 800px;
+}
+
 .project-detail form {
   width: 100%;
 }
@@ -84,12 +89,12 @@
 }
 
 .project-description iframe {
-  width: 40%;
-  height: 30%;
+  max-width: 50%;
+  max-height: 30%;
 }
 
 .project-description img {
-  max-width: 40%;
+  max-width: 50%;
   max-height: 30%;
   border-radius: 5px;
 }

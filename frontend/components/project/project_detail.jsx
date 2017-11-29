@@ -44,6 +44,7 @@ class ProjectDetail extends React.Component {
 
   componentDidMount() {
     this.props.fetchProject(this.props.match.params.projectId);
+    window.scrollTo(0,0);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -111,8 +112,6 @@ class ProjectDetail extends React.Component {
         <div className="project-detail">
           <img
             src={project.img_url}
-            height = "600px"
-            width = "600px"
             className="project-detail-img" />
           <h1>{project.title}</h1>
           <div className="detail-label"><u>Category:</u> {project.category}</div>
