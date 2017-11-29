@@ -64,7 +64,7 @@ class ProjectUpdate extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="errors">
         {
           this.props.errors.map((error) => (
             <li key={error}>{error}</li>))

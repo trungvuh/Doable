@@ -82,20 +82,28 @@ class ProjectDetail extends React.Component {
   }
 
   showComment() {
-    const { project } = this.props;
-    return (
-      <div>
-        <ul>
-          {
-            project.comments.map( (comment) => <CommentShow
+    const comments = this.props.project.comments;
+
+    if (!comments) {
+      return (
+        <div></div>
+      );
+    }
+    else {
+      return (
+        <div>
+          <ul>
+            {
+              comments.map( (comment) => <CommentShow
               key={comment.id}
               body={comment.body}
               author={comment.author.name}
               created={comment.created_at}/>)
-          }
-        </ul>
-      </div>
-    );
+            }
+          </ul>
+        </div>
+      );
+    }
   }
 
 

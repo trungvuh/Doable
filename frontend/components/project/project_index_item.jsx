@@ -16,8 +16,6 @@ export default ({project}) => {
         <Link to={`/projects/${project.id}`}>
           <img
             src={project.img_url}
-            height = "250px"
-            width = "300px"
             className="project-index-img" />
         </Link>
         <div className="project-index-item-text">

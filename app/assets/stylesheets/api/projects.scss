@@ -26,6 +26,12 @@
 
 }
 
+.project-index-item img {
+  height: 250px;
+  width: 300px;
+  object-fit: cover;
+}
+
 .project-index-item img:hover {
   opacity: 0.7;
 }
@@ -67,14 +73,31 @@
   max-height: 800px;
 }
 
+.project-detail img {
+  margin-bottom: 5%;
+}
+
 .project-detail form {
-  width: 100%;
+  width: 80%;
 }
 
 .project-detail h1 {
   font-size: 2em;
   font-weight: bold;
-  margin: 5%;
+  margin-bottom: 5%;
+}
+
+.errors {
+  width: 30%;
+  margin-left: 10%;
+}
+
+.errors li {
+  color: red;
+  list-style-type: circle;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 2%;
 }
 
 .detail-label {
@@ -198,15 +221,16 @@
   font-size: 20px;
 }
 
-.quill iframe {
-  width: 40%;
-  height: 30%;
-}
-
-.quill img {
+.quill img, .quill iframe {
   max-width: 40%;
   max-height: 30%;
   border-radius: 5px;
+}
+
+.ql-editor p, .ql-editor ul, .ql-editor ol, .ql-editor a {
+  font-family: $helvetica;
+  font-size: 1.3em;
+  font-weight: normal;
 }
 
 
