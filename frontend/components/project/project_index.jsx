@@ -5,7 +5,7 @@ import LoadingIcon from '../util/loading_icon';
 
 class ProjectIndex extends React.Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchProjects();
   }
 

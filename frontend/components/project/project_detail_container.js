@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import { fetchProject, deleteProject } from '../../actions/project_actions';
 import { fetchComments, deleteComment } from '../../actions/comment_action';
 import ProjectDetail from './project_detail';
+import { commentSelector } from '../../reducers/selector';
 
 const mapStateToProps = (state, ownProps) => ({
   project: state.entities.projects[ownProps.match.params.projectId],
+  // comments: commentSelector(state, ownProps.match.params.projectId),
   currentUser: state.session.currentUser,
   loading: state.ui.loading.detailLoading
 });

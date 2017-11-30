@@ -11,18 +11,8 @@ class CommentForm extends React.Component {
       project_id: this.props.match.params.projectId,
     };
 
-    // this.openModal = this.openModal.bind(this);
-    // this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  //
-  // openModal() {
-  //   this.setState({ modalIsOpen: false });
-  // }
-  //
-  // closeModal() {
-  //   this.setState({ modalIsOpen: true });
-  // }
 
   update(property){
     return event => {

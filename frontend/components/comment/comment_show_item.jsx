@@ -1,13 +1,12 @@
 import React from 'react';
 import Moment from 'react-moment';
 
-
-class CommentShow extends React.Component {
+class CommentsShowItem extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  render () {
+  render() {
     const { body, author, created } = this.props;
 
     return (
@@ -18,9 +17,8 @@ class CommentShow extends React.Component {
           <span><Moment fromNow>{ created }</Moment></span>
         </div>
       </li>
-
     );
   }
 }
 
-export default CommentShow;
+export default CommentsShowItem;

@@ -7,7 +7,7 @@ import { render } from 'react-dom';
 
 import LoadingIcon from '../util/loading_icon';
 import CommentFormContainer from '../comment/comment_form_container';
-import CommentShow from '../comment/comment_show';
+import CommentShowContainer from '../comment/comment_show_container';
 
 const customStyles = {
   content : {
@@ -44,8 +44,8 @@ class ProjectDetail extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchComments();
     this.props.fetchProject(this.props.match.params.projectId);
-    // this.props.fetchComments();
     window.scrollTo(0,0);
   }
 
@@ -82,36 +82,15 @@ class ProjectDetail extends React.Component {
   }
 
   showComment() {
-    const comments = this.props.project.comments;
-
-    if (!comments) {
-      return (
-        <LoadingIcon loading={true}/>
-      );
-    }
-    else {
-      return (
-        <div>
-          <ul>
-            {
-              comments.map( (comment) => <CommentShow
-                key={comment.id}
-                body={comment.body}
-                author={comment.author.name}
-                created={comment.created_at}
-                delete={this.props.deleteComment}
-              />)
-            }
-          </ul>
-        </div>
-      );
-    }
+    return (
+      <CommentShowContainer projectId={this.props.project.id} />
+    );
   }
 
 
   render() {
     const { project, loading } = this.props;
-    console.log(this.props);
+
     if (!project) {
       return (
         <LoadingIcon loading={loading}/>
