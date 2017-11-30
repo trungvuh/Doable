@@ -24,9 +24,6 @@ const projectReducer = (state = {}, action) => {
       delete nextState[action.projectId];
       return nextState;
 
-    case RECEIVE_COMMENT:
-      return merge({}, state, {[action.comment.id]: action.comment});
-
     default:
       return state;
   }
