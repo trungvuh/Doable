@@ -1,6 +1,7 @@
 import React from 'react';
 import Moment from 'react-moment';
 
+import LoadingIcon from '../util/loading_icon';
 import CommentsShowItem from './comment_show_item';
 
 class CommentsShow extends React.Component {
@@ -16,7 +17,7 @@ class CommentsShow extends React.Component {
     console.log(this.props);
     if (!this.props.comments) {
       return (
-        <div></div>
+        <LoadingIcon loading={true} />
       );
     }
     return (

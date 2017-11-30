@@ -18,6 +18,7 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.author_id = current_user.id
     @project = Project.find(@comment.project_id)
+
     if @comment.save
       render 'api/comments/show'
     else

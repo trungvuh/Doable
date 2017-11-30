@@ -25,10 +25,7 @@ const projectReducer = (state = {}, action) => {
       return nextState;
 
     case RECEIVE_COMMENT:
-     const comment = action.comment;
-     const project = nextState[comment.project_id];
-     project.comments.push(comment);
-     return nextState;
+      return merge({}, state, {[action.comment.id]: action.comment});
 
     default:
       return state;
@@ -37,3 +34,10 @@ const projectReducer = (state = {}, action) => {
 };
 
 export default projectReducer;
+
+
+//  debugger
+//  return action.comment;
+//  // const project = nextState[comment.project_id];
+//  // project.comments.push(comment);
+//  // return nextState;
