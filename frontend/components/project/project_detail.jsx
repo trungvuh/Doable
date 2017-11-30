@@ -86,7 +86,7 @@ class ProjectDetail extends React.Component {
 
     if (!comments) {
       return (
-        <div></div>
+        <LoadingIcon loading={true}/>
       );
     }
     else {

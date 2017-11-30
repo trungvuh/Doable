@@ -19,7 +19,11 @@ export default ({project}) => {
             className="project-index-img" />
         </Link>
         <div className="project-index-item-text">
-          <span id="item-title">{project.title}</span>
+          <span id="item-title">
+            <Link to={`/projects/${project.id}`} className="index-link">
+              {project.title}
+            </Link>
+          </span>
           <span>by {project.creator.name} in {project.category}</span>
         </div>
       </li>

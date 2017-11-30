@@ -21,7 +21,12 @@ const App = () => (
     </Switch>
 
     <ProjectPage />
-    <SessionPage />
+
+    <Switch>
+      <AuthRoute path='/login' component={SessionPage} />
+      <AuthRoute path='/signup' component={SessionPage} />
+    </Switch>
+
 
     <footer className='footer-nav'>
       <Footer />

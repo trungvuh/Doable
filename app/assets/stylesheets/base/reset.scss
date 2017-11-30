@@ -16,6 +16,10 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-family: inherit;
   vertical-align: baseline;
 }
+
+html {
+  height: 100%;
+}
 /* remember to define focus styles! */
 :focus {
   outline: 0;
