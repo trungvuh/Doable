@@ -1,19 +1,26 @@
 import React from 'react';
 import Moment from 'react-moment';
 
-const CommentShow = ({ body, author, created }) => {
 
-  return (
+class CommentShow extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-    <li className="comment-body">
-      <span>{body}</span>
-      <span>
-        by {author}
-        <Moment fromNow>{ created }</Moment>
-      </span>
-    </li>
+  render () {
+    const { body, author, created } = this.props;
 
-  );
-};
+    return (
+      <li className="comment-form-area">
+        <div className="comment-body">{body}</div>
+        <div className='comment-author'>
+          <span>{author}</span>
+          <span><Moment fromNow>{ created }</Moment></span>
+        </div>
+      </li>
+
+    );
+  }
+}
 
 export default CommentShow;

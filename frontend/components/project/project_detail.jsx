@@ -98,7 +98,9 @@ class ProjectDetail extends React.Component {
                 key={comment.id}
                 body={comment.body}
                 author={comment.author.name}
-                created={comment.created_at}/>)
+                created={comment.created_at}
+                delete={this.props.deleteComment}
+              />)
             }
           </ul>
         </div>

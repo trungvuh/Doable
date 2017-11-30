@@ -1,3 +1,40 @@
 // Place all the styles related to the Api::Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import '../base/color';
+@import '../base/font';
+
+.comment-form-area {
+  width: 500px;
+  min-height: 50px;
+  border-radius: 20px;
+  border: 1px dashed $gray;
+  color: inherit;
+  font-size: 1.1em;
+  padding: 5px 25px;
+  background: $pearl-white;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+}
+
+.comment-body {
+  flex: 3;
+  margin-top: 10px;
+}
+
+.comment-author {
+  flex: 1;
+  font-size: 0.7em;
+  color: $gray;
+  font-style: italic;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-author span {
+  margin: 10px 0px 2px 10px;
+}
