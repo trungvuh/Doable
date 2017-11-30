@@ -14,7 +14,6 @@ class CommentsShow extends React.Component {
   // }
 
   render () {
-    console.log(this.props);
     if (!this.props.comments) {
       return (
         <LoadingIcon loading={true} />
@@ -26,11 +25,13 @@ class CommentsShow extends React.Component {
           this.props.comments.map( comment =>
           <CommentsShowItem
             key={comment.id}
+            commentId={comment.id}
             body={comment.body}
             author={comment.author.name}
             created={comment.created_at}
-            update={this.props.updateComment}
-            delete={this.props.deleteComment}
+            updateComment={this.props.updateComment}
+            deleteComment={this.props.deleteComment}
+            currentUser={this.props.currentUser}
           />)
         }
       </ul>

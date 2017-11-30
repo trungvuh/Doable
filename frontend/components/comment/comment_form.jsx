@@ -23,7 +23,8 @@ class CommentForm extends React.Component {
   handleSubmit(event){
     event.preventDefault();
     this.props.createComment(this.state)
-      .then(() => this.setState({ body: ''}));
+      .then(() => this.setState({ body: ''}))
+      .then(() => window.scrollTo(0,document.body.scrollHeight));
   }
 
   render () {

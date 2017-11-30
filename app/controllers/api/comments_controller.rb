@@ -41,7 +41,7 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
 
     if @comment.author_id == current_user.id
-      @coment.destroy!
+      @comment.destroy!
       render json: {}
     else
       render json: ["Can't delete this comment"], status: 404
