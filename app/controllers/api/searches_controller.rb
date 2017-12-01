@@ -1,6 +1,7 @@
 class Api::SearchesController < ApplicationController
   def index
     @projects = Project.top_five_search(search_params[:query])
+    render :index
   end
 
   def search_params

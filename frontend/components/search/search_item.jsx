@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchIndexItem from './search_index_item';
 
 class SearchIndex extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class SearchIndex extends React.Component {
     if (searchVal === '') return null;
 
     return(
-      <ul>
+      <ul className="search-item-container">
         {
           projects.map(project => <SearchIndexItem
             key={project.id}

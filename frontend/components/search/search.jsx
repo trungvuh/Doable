@@ -7,7 +7,8 @@ class Search extends React.Component {
     this.state = {
       searchVal: ''
     };
-    this.handleChange= this.handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.clearState = this.clearState.bind(this);
   }
 
   handleChange(event) {
@@ -15,7 +16,7 @@ class Search extends React.Component {
 
     const value = event.target.value;
     this.setState({ searchVal: value }, () => {
-      this.props.seachDatabase(this.state.searchVal);
+      this.props.searchDatabase(this.state.searchVal);
     });
   }
 
@@ -29,7 +30,7 @@ class Search extends React.Component {
         <input
           type="text"
           onChange={this.handleChange}
-          placeholder="Search project..."
+          placeholder="Search Project..."
           value={this.state.searchVal}
           />
         <SearchIndex

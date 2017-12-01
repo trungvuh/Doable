@@ -86,7 +86,9 @@ export const loadingProject = () => ({
   type: LOADING_PROJECT
 });
 
-export const receiveSearchResults = searchResults => ({
-  type: RECEIVE_SEARCH_RESULTS,
-  searchResults
-});
+export const receiveSearchResults = searchResults => {
+  return ({
+    type: RECEIVE_SEARCH_RESULTS,
+    searchResults
+  });
+};
