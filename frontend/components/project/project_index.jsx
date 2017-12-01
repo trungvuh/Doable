@@ -9,6 +9,10 @@ class ProjectIndex extends React.Component {
     this.props.fetchProjects();
   }
 
+  scrollToTop() {
+    window.scrollTo(0,0);
+  }
+
   render () {
     const { projects, loading } = this.props;
 
