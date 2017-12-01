@@ -113,6 +113,10 @@
   margin-bottom: 2%;
 }
 
+.project-description {
+  font-size: 1.1em;
+}
+
 .project-description li {
   list-style-type: circle;
   margin: 0.5em 4em;
@@ -133,7 +137,8 @@
   display: flex;
   justify-content: space-around;
   width: 50%;
-  margin-top: 4%;
+  margin-bottom: 2%;
+  margin-top: 5%;
 }
 
 .prj-btn {
@@ -173,6 +178,10 @@
 
 }
 
+.fa-arrow-circle-o-up {
+  align-self: flex-end;
+}
+
 /////project-form////
 
 
@@ -184,20 +193,20 @@
   margin-left: 27%;
 }
 
-.prj-fm-btn {
-  width: 150px;
-  height: 30px;
-  border-radius: 5px;
-  font-size: 0.9em;
-  // margin-left: 15px;
-  cursor: pointer;
-}
-
-.prj-fm-btn:hover {
-  background: $gray-ins;
-  color: $white;
-  border: none;
-}
+// .prj-fm-btn {
+//   width: 150px;
+//   height: 30px;
+//   border-radius: 5px;
+//   font-size: 0.9em;
+//   // margin-left: 15px;
+//   cursor: pointer;
+// }
+//
+// .prj-fm-btn:hover {
+//   background: $gray-ins;
+//   color: $white;
+//   border: none;
+// }
 
 .detail-label input {
   width: 350px;

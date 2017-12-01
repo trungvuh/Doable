@@ -14,13 +14,14 @@
  *= require_self
  */
 //CSS reset
-@import 'base/reset';
+// @import 'base/reset';
 
 //Base
 @import 'base/font';
 @import 'base/color';
 
 //Navbar
+@import 'api/background';
 @import 'navbar/navbar';
 @import 'api/sessions';
 
@@ -47,10 +48,6 @@ main {
   height: 100%;
 }
 
-.background-pic {
-  width: 100%;
-  height: 650px;
-}
 
 em {
   font-style: italic;

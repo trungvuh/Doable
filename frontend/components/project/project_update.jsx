@@ -139,10 +139,10 @@ class ProjectUpdate extends React.Component {
               </div>
             <div className='project-form-button'>
               <input type="submit" value="Update Project"
-                className='prj-fm-btn' />
+                className='upload-btn' />
               <button
                 onClick={this.navigateToShow}
-                className='prj-fm-btn'>
+                className='upload-btn'>
                 Cancel
               </button>
             </div>

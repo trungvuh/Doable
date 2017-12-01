@@ -5,13 +5,10 @@
 @import '../base/color';
 @import '../base/font';
 
-
-
 .session-page{
   height: 100%;
   display: flex;
   justify-content: space-around;
-  padding-bottom: 12px;
 }
 
 .session-welcome {
@@ -55,14 +52,14 @@
   margin: 80px 50px 60px 100px;
   height: 32%;
   padding: 5px;
-  font-size: 17px;
+  font-size: 1.3em;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   color: $dark-gray;
   flex-basis: 4,1;
   box-shadow: 5px 5px 2px $gray;
-  min-width: 15%;
+  // min-width: 15%;
 }
 
 .main-session-form {
@@ -114,9 +111,10 @@
 }
 
 .session-button {
-  width: 100px;
+  width: 40%;
+  min-width: 120px;
   height: 30px;
-  font-size: 20px;
+  font-size: 1em;
   color: $kinda-teal;
   background: $dawn-pink;
   margin-top: 10px;

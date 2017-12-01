@@ -9,7 +9,7 @@ class CommentsShowItem extends React.Component {
   }
 
   showDelete() {
-    const { author, deleteComment, currentUser, commentId } = this.props;
+    const { author, deleteComment, updateComment, currentUser, commentId } = this.props;
     if ( author !== currentUser.username) {
       return (
         <div></div>
@@ -17,10 +17,19 @@ class CommentsShowItem extends React.Component {
     }
     else {
       return (
-        <i className="fa fa-trash fa-2x" onClick={() => deleteComment(commentId)}></i>
+        <div className="comment-icon">
+
+          <i className="fa fa-trash fa-2x" onClick={() => deleteComment(commentId)}></i>
+        </div>
       );
     }
   }
+
+  showEdit() {
+    
+  }
+
+  // <i className="fa fa-edit fa-2x" onClick={() => updateComment(commentId)}></i>
 
   render() {
     const { body, author, created } = this.props;

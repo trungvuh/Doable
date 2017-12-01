@@ -29,6 +29,7 @@ class ProjectDetail extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.scrollToTop = this.scrollToTop.bind(this);
   }
 
   openModal() {
@@ -87,6 +88,10 @@ class ProjectDetail extends React.Component {
     );
   }
 
+  scrollToTop() {
+    window.scrollTo(0,0);
+  }
+
 
   render() {
     const { project, loading } = this.props;
@@ -109,11 +114,11 @@ class ProjectDetail extends React.Component {
           <div className="project-description">
             {ReactHtmlParser(project.description)}
           </div>
+          {this.projectButton()}
+
           <CommentFormContainer
             projectId={this.props.projectId}/>
           {this.showComment()}
-
-          {this.projectButton()}
 
           <div className='modal-deletion'>
             <Modal
@@ -127,16 +132,18 @@ class ProjectDetail extends React.Component {
               <h2>Confirm Deletion?</h2>
               <div>
                 <button
-                  className='prj-fm-btn'
+                  className='upload-btn'
                    onClick={() => this.props.deleteProject(project.id)
                   .then(() => this.props.history.push('/'))}>
                   Delete
                 </button>
                 <button
-                  className='prj-fm-btn' onClick={this.closeModal}>Cancel</button>
+                  className='upload-btn' onClick={this.closeModal}>Cancel</button>
               </div>
             </Modal>
           </div>
+          <i className="fa fa-arrow-circle-o-up fa-2x"
+            onClick={this.scrollToTop}></i>
         </div>
       );
     }

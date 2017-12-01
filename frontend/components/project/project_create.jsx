@@ -136,10 +136,10 @@ class ProjectCreate extends React.Component {
           </div>
           <div className='project-form-button'>
             <input type="submit" value="Create Project"
-              className='prj-fm-btn' />
+              className='upload-btn' />
             <button
               onClick={this.navigateHome}
-              className='prj-fm-btn'>
+              className='upload-btn'>
               Cancel
             </button>
           </div>
