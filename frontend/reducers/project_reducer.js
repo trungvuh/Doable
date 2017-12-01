@@ -1,10 +1,8 @@
 import {
-  RECEIVE_PROJECTS,
-  RECEIVE_PROJECT,
-  REMOVE_PROJECT,
+  RECEIVE_PROJECTS, RECEIVE_PROJECT, REMOVE_PROJECT
 } from '../actions/project_actions';
-import {
-  RECEIVE_COMMENT
+
+import { RECEIVE_COMMENT
 } from '../actions/comment_action';
 
 import merge from 'lodash/merge';

@@ -6,7 +6,10 @@ export const RECEIVE_PROJECT_ERRORS = 'RECEIVE_PROJECT_ERRORS';
 export const LOADING_PROJECT = 'LOADING_PROJECT';
 export const LOADING_PROJECTS = 'LOADING_PROJECTS';
 
+export const RECEIVE_SEARCH_RESULTS = 'RECEIVE_SEARCH_RESULTS';
+
 import * as ProjectAPIUtil from '../utils/project_api_util';
+import * as SearchAPIUtil from '../utils/search_api_util';
 
 
 export const fetchProjects = () => dispatch => {
@@ -49,6 +52,11 @@ export const deleteProject = projectId => dispatch => (
     )
 );
 
+export const searchDatabase = query => dispatch => (
+  SearchAPIUtil.search(query)
+    .then( results => dispatch(receiveSearchResults(results)))
+);
+
 
 export const receiveProjects = projects => ({
   type: RECEIVE_PROJECTS,
@@ -76,4 +84,9 @@ export const loadingProjects = () => ({
 
 export const loadingProject = () => ({
   type: LOADING_PROJECT
+});
+
+export const receiveSearchResults = searchResults => ({
+  type: RECEIVE_SEARCH_RESULTS,
+  searchResults
 });

@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :projects, except: [:new, :edit]
     resources :comments, except: [:new, :edit]
+    resources :searches, only: [:index]
   end
 end

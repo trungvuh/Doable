@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import GreetingContainer from '../navbar/greeting_container';
+import SearchContainer from '../search/search_container';
 
 const Header = () => (
 
@@ -14,6 +15,7 @@ const Header = () => (
       <Link to='/projects/new'>
         <button className="nav-proj-btn">Create a Project</button>
       </Link>
+      <SearchContainer />
       <GreetingContainer  />
     </div>
   </header>
