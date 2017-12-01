@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   padding: 0 0;
-  margin-top: 5%;
+  // margin-top: 5%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,7 +24,8 @@
   animation-duration: 20s;
   width: 100%;
   position: absolute;
-  padding-bottom: 4%;
+  padding: 4%;
+  padding-top: 5%;
 }
 
 @keyframes cf4FadeInOut {
