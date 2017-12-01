@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   padding: 0 0;
-  // margin: 5% 0%;
+  margin-top: 5%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
-  height: 700px;
+  height: 750px;
   overflow: hidden;
   object-fit: fill;
 }
@@ -22,8 +22,9 @@
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-duration: 20s;
+  width: 100%;
   position: absolute;
-  padding-bottom: 15%;
+  padding-bottom: 4%;
 }
 
 @keyframes cf4FadeInOut {
