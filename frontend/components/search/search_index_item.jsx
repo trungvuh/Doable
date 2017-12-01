@@ -10,15 +10,17 @@ class SearchIndexItem extends React.Component {
     const { project } = this.props;
 
     return (
-      <li className='search-item'>
-        <Link to={`/projects/${project.id}`} onClick={this.props.clearState} >
-          <img
-            src={project.img_url}
-            className='search-thumbnail'
-            />
-          <span className='search-title'>{project.title}</span>
-        </Link>
-      </li>
+      <div>
+        <li className='search-item'>
+          <Link to={`/projects/${project.id}`} onClick={this.props.clearState} >
+            <img
+              src={project.img_url}
+              className='search-thumbnail'
+              />
+            <span className='search-title'>{project.title}</span>
+          </Link>
+        </li>
+      </div>
     );
   }
 }

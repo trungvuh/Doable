@@ -5,7 +5,7 @@
   width: 200px;
   height: 35px;
   border-radius: 2px;
-  border: 1px solid $lightest-gray;
+  border: 1px solid $light-gray;
   font-size: 1em;
   position: absolute;
   top: 22.5px;
@@ -20,10 +20,22 @@
 }
 
 .search-item-container {
-  border: 1px solid $lightest-gray;
+  border: 1px solid $light-gray;
   width: 500px;
   text-decoration: none;
   background: $pearl-white;
+}
+
+.search-outer button {
+  position: absolute;
+  background: $pearl-white;
+  cursor: pointer;
+  top: 3px;
+  left: 200px;
+}
+
+.search-outer button:hover {
+  background: $lightest-gray;
 }
 
 .search-item a {

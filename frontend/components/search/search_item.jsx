@@ -12,16 +12,19 @@ class SearchIndex extends React.Component {
     if (searchVal === '') return null;
 
     return(
-      <ul className="search-item-container">
-        {
-          projects.map(project => <SearchIndexItem
-            key={project.id}
-            project={project}
-            currentUser={this.props.currentUser}
-            clearState={this.props.clearState}
-            />)
-        }
-      </ul>
+      <div className="search-outer">
+        <ul className="search-item-container">
+          {
+            projects.map(project => <SearchIndexItem
+              key={project.id}
+              project={project}
+              currentUser={this.props.currentUser}
+              clearState={this.props.clearState}
+              />)
+            }
+          </ul>
+          <button onClick={this.props.clearState}>X</button>
+      </div>
     );
   }
 }
