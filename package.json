@@ -1,6 +1,11 @@
 {
   "name": "FSP",
-  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -19,16 +24,13 @@
     "react-router-dom": "^4.2.2",
     "react-spinners": "^0.2.5",
     "redux": "^3.7.2",
-    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "superagent": "^3.8.1",
     "webpack": "^3.8.1"
   },
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
-  "version": "1.0.0",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
+  "devDependencies": {
+    "redux-logger": "^3.0.6",
+    "redux-devtools-extension": "^2.13.2"
   },
   "engines": {
     "node": "6.10.1",
@@ -41,8 +43,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "redux-devtools-extension": "^2.13.2"
-  }
+  "license": "ISC"
 }

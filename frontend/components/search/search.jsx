@@ -30,7 +30,7 @@ class Search extends React.Component {
         <input
           type="text"
           onChange={this.handleChange}
-          placeholder="Search Project..."
+          placeholder="Search for a Project..."
           value={this.state.searchVal}
           />
         <SearchIndex
