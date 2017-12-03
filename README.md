@@ -1,5 +1,3 @@
-# Production Readme
-
 # Welcome to Doable
 
 ## [Live Demo](https://fspdoable.herokuapp.com/#/)
@@ -62,5 +60,3 @@ Doable allows users to:
   * Follows: user can follow each other.
   * User profile page: feature all projects of her own, including and liked projects.
   * Category: projects will be divided into sub-category. Update search so that user can also search for project based on category, not just title.
-
-    
