@@ -6,13 +6,13 @@ class BackgroundImg extends React.Component {
     return (
       <div className="background" id="cf4a">
         <img
-          src='http://res.cloudinary.com/trungvuh/image/upload/c_fill,h_700,w_1500/v1512110185/maxresdefault_daw1gt.jpg'/>
+          src='https://res.cloudinary.com/trungvuh/image/upload/c_fill,h_700,w_1500/v1512110185/maxresdefault_daw1gt.jpg'/>
         <img
-          src='http://res.cloudinary.com/trungvuh/image/upload/c_fill,h_700,w_1500/v1511374128/25_bkagbn.jpg'/>
+          src='https://res.cloudinary.com/trungvuh/image/upload/c_fill,h_700,w_1500/v1511374128/25_bkagbn.jpg'/>
         <img
-          src='http://res.cloudinary.com/trungvuh/image/upload/c_fill,h_700,w_1500/v1512110268/maxresdefault_1_aryhrr.jpg'/>
+          src='https://res.cloudinary.com/trungvuh/image/upload/c_fill,h_700,w_1500/v1512110268/maxresdefault_1_aryhrr.jpg'/>
         <img
-          src='http://res.cloudinary.com/trungvuh/image/upload/c_fill,h_700,w_1500/v1512112324/IMG_7301_xetlfv.jpg'/>
+          src='https://res.cloudinary.com/trungvuh/image/upload/c_fill,h_700,w_1500/v1512112324/IMG_7301_xetlfv.jpg'/>
       </div>
     );
 
