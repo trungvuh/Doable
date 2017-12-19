@@ -19,10 +19,10 @@
 }
 
 .appname {
-  margin: 10px 0 0 100px;
+  margin: 0 0 0 105px;
   font-family: $pacifico;
   font-size: 40px;
-  font-weight: 550;
+  font-weight: 500;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -34,11 +34,11 @@
 
 .app-punch-line {
   color: inherit;
-  font-family: inherit;
-  font-size: 13px;
+  font-family: $pacifico;
+  font-size: 15px;
   position: absolute;
-  top: 58px;
-  left: 94px;
+  top: 53px;
+  left: 93px;
 }
 
 .navbar-button {

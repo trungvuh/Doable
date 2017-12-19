@@ -62,7 +62,7 @@ project2 = Project.create(
   <p>I added photos using double sided tape as a way to teach our kids the names and faces of extended family members. “Go find Grandma!” Watching those little brains work to remember which door and which face is priceless.<p></br></br>
   <p>Building a toddler busy board is one of the best DIY projects we’ve done and I’m so happy we have it. I can’t imagine ever getting rid of this! It has “future grandkids” written all over it. The added element of being a peek-a-boo toddler busy board makes it just a little more special.<p></br></br>",
   category: "Active",
-  img_url: "http://res.cloudinary.com/trungvuh/image/upload/c_scale,h_500,w_500/v1511545432/swing_1_rnkae3.jpg",
+  img_url: "https://res.cloudinary.com/trungvuh/image/upload/c_scale,h_500,w_500/v1511545432/swing_1_rnkae3.jpg",
   creator_id: user1.id
 )
 project3 = Project.create(
@@ -86,7 +86,7 @@ project3 = Project.create(
   <p>I added photos using double sided tape as a way to teach our kids the names and faces of extended family members. “Go find Grandma!” Watching those little brains work to remember which door and which face is priceless.<p></br></br>
   <p>Building a toddler busy board is one of the best DIY projects we’ve done and I’m so happy we have it. I can’t imagine ever getting rid of this! It has “future grandkids” written all over it. The added element of being a peek-a-boo toddler busy board makes it just a little more special.<p></br></br>",
   category: "Busy Board",
-  img_url: "http://res.cloudinary.com/trungvuh/image/upload/c_fill,h_500,w_500/v1511544567/busy-board-3_ehzl9b.jpg",
+  img_url: "https://res.cloudinary.com/trungvuh/image/upload/c_fill,h_500,w_500/v1511544567/busy-board-3_ehzl9b.jpg",
   creator_id: user2.id
 )
 project4 = Project.create(
@@ -110,7 +110,7 @@ project4 = Project.create(
   <p>I added photos using double sided tape as a way to teach our kids the names and faces of extended family members. “Go find Grandma!” Watching those little brains work to remember which door and which face is priceless.<p></br></br>
   <p>Building a toddler busy board is one of the best DIY projects we’ve done and I’m so happy we have it. I can’t imagine ever getting rid of this! It has “future grandkids” written all over it. The added element of being a peek-a-boo toddler busy board makes it just a little more special.<p></br></br>",
   category: "Basket",
-  img_url: "http://res.cloudinary.com/trungvuh/image/upload/c_fill,h_500,w_500/v1511544863/basket-1_qvmlda.jpg",
+  img_url: "https://res.cloudinary.com/trungvuh/image/upload/c_fill,h_500,w_500/v1511544863/basket-1_qvmlda.jpg",
   creator_id: user4.id
 )
 project5 = Project.create(
@@ -134,7 +134,7 @@ project5 = Project.create(
   <p>I added photos using double sided tape as a way to teach our kids the names and faces of extended family members. “Go find Grandma!” Watching those little brains work to remember which door and which face is priceless.<p></br></br>
   <p>Building a toddler busy board is one of the best DIY projects we’ve done and I’m so happy we have it. I can’t imagine ever getting rid of this! It has “future grandkids” written all over it. The added element of being a peek-a-boo toddler busy board makes it just a little more special.<p></br></br>",
   category: "Clothing",
-  img_url: "http://res.cloudinary.com/trungvuh/image/upload/c_fill,h_500,w_500/v1511545010/Baby-Mittens-1_k7molo.jpg",
+  img_url: "https://res.cloudinary.com/trungvuh/image/upload/c_fill,h_500,w_500/v1511545010/Baby-Mittens-1_k7molo.jpg",
   creator_id: user5.id
 )
 project6 = Project.create(
@@ -158,6 +158,6 @@ project6 = Project.create(
   <p>I added photos using double sided tape as a way to teach our kids the names and faces of extended family members. “Go find Grandma!” Watching those little brains work to remember which door and which face is priceless.<p></br></br>
   <p>Building a toddler busy board is one of the best DIY projects we’ve done and I’m so happy we have it. I can’t imagine ever getting rid of this! It has “future grandkids” written all over it. The added element of being a peek-a-boo toddler busy board makes it just a little more special.<p></br></br>",
   category: "Busy Board",
-  img_url: "http://res.cloudinary.com/trungvuh/image/upload/c_fill,w_600/v1511544685/busy-board-4_bc652b.png",
+  img_url: "https://res.cloudinary.com/trungvuh/image/upload/c_fill,w_600/v1511544685/busy-board-4_bc652b.png",
   creator_id: user3.id
 )
