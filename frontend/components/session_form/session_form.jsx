@@ -81,26 +81,26 @@ class SessionForm extends React.Component {
       <div className="session-section">
         <div className="main-session-form">
           <div className="session-title">
-            {title}
+            <h2>{title}</h2>
             {this.renderErrors()}
           </div>
 
           <form onSubmit={this.handleSubmit} className="session-form">
 
-            <span>Username:</span>
             <input
               type="text"
               value={this.state.username}
               onChange={this.handleInput('username')}
               required="true"
+              placeholder="Username"
               className="session-input" />
 
-            <span>Password:</span>
             <input
               type="password"
               value={this.state.password}
               onChange={this.handleInput('password')}
               required="true"
+              placeholder="Password"
               className="session-input" />
 
             <input
@@ -108,25 +108,25 @@ class SessionForm extends React.Component {
               value={capitalTitle}
               className="session-button" />
 
-            <button
-              className="session-button"
-              onClick={this.demoLogin}>
-              DEMO
-            </button>
           </form>
 
         </div>
         <div className="other-session-form">
-          <span className="session--other-title">{otherTitle}</span>
-          <br/>
-          <span>{this.navLink()}</span>
+          <div>
+            <h4 className="session-other-title">{otherTitle}</h4>
+            <span>{this.navLink()}</span>
+          </div>
+          <div>
+            <h4 className="session-other-title">Just Testing Out?</h4>
+            <button
+              className="session-button"
+              onClick={this.demoLogin}>DEMO LOG IN
+            </button>
+          </div>
         </div>
 
       </div>
     );
   }
 }
-
-
-
 export default withRouter(SessionForm);

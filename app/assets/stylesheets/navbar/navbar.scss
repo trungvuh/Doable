@@ -43,12 +43,12 @@
 
 .navbar-button {
   margin: 20px;
-  margin-right: 100px;
+  margin-right: 40px;
   font-size: 15px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-width: 240px;
+  min-width: 300px;
 }
 
 .btn {
@@ -57,7 +57,9 @@
 }
 
 .btn:hover {
-  text-decoration: underline;
+  // text-decoration: underline;
+  // color: #fff !important;
+  border-bottom: 1px solid black;
 }
 
 .btn:visited {
