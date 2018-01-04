@@ -15,7 +15,7 @@ const Footer = () => (
       </img>
     </a>
 
-    <a href="https://trungvuh.github.io/TV/" target="_blank" className="linkedin">
+    <a href="https://trungvuh.github.io/" target="_blank" className="linkedin">
       <img
         src="https://res.cloudinary.com/trungvuh/image/upload/v1515003657/Homepage_ujexda.png">
       </img>
